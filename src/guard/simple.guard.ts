@@ -4,7 +4,7 @@
 import { CanActivate, Context, UnauthorizedException } from "../../deps.ts";
 
 export class SimpleGuard implements CanActivate {
-  async canActivate(context: Context): Promise<boolean> {
+  async canActivate(context: Context) {
     const b = await this.validateRequest(context);
     if (!b) {
       throw new UnauthorizedException("Unauthorized");

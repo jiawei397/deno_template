@@ -1,9 +1,10 @@
 import { BaseService } from "../../tools/db.ts";
 import { logger } from "../../tools/log.ts";
+import { AddUserDto } from "../dto/user.dto.ts";
 import { User } from "../schemas/user.schema.ts";
 
 class UserService extends BaseService<User> {
-  async save(createUserDto: User): Promise<User> {
+  async save(createUserDto: AddUserDto): Promise<User> {
     const res = await this.model.insertOne(createUserDto);
     logger.debug(`创建用户【${createUserDto.username}】成功！`);
     console.log(res);

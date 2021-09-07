@@ -7,7 +7,7 @@ export {
   Response,
   send,
   Status,
-} from "https://deno.land/x/oak@v7.7.0/mod.ts";
+} from "https://deno.land/x/oak@v9.0.0/mod.ts";
 
 export {
   Body,
@@ -23,12 +23,13 @@ export {
   Req,
   Res,
   Router,
+  BadRequestException,
   UnauthorizedException,
   UseGuards,
-} from "https://deno.land/x/oak_nest@v0.0.14/mod.ts";
+} from "https://deno.land/x/oak_nest@v0.0.16/mod.ts";
 
 // 类型需要这样导出，不然会报重复导出
-export type { CanActivate } from "https://deno.land/x/oak_nest@v0.0.14/mod.ts";
+export type { CanActivate } from "https://deno.land/x/oak_nest@v0.0.16/mod.ts";
 
 export { join } from "https://deno.land/std@0.97.0/path/mod.ts";
 
