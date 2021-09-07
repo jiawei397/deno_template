@@ -7,7 +7,7 @@ export {
   Response,
   send,
   Status,
-} from "https://deno.land/x/oak@v7.7.0/mod.ts";
+} from "https://deno.land/x/oak@v9.0.0/mod.ts";
 
 export {
   Body,

@@ -13,7 +13,7 @@ scripts:
     # env:
       # DEBUG: "true"
 #    inspect: "127.0.0.1:9229"
-#    lock: lock.json
+    lock: lock.json
     # log: info
   build:
     cmd: "deno bundle src/main.ts main.js"
