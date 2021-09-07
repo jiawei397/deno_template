@@ -4,11 +4,11 @@ import {
   Post,
   Body,
   Query,
+  BadRequestException,
   UseGuards,
 } from "../../deps.ts";
 import { userService } from "./services/user.service.ts";
 import { SimpleGuard } from "../guard/simple.guard.ts";
-import { BadRequestException } from "https://deno.land/x/oak_nest@v0.0.7/mod.ts";
 import { User } from "./schemas/user.schema.ts";
 import { UpdateUserDto } from "./dto/user.dto.ts";
 

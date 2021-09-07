@@ -23,6 +23,7 @@ export {
   Req,
   Res,
   Router,
+  BadRequestException,
   UnauthorizedException,
   UseGuards,
 } from "https://deno.land/x/oak_nest@v0.0.14/mod.ts";
