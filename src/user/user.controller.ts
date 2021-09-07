@@ -12,6 +12,7 @@ import { BadRequestException } from "https://deno.land/x/oak_nest@v0.0.7/mod.ts"
 import { User } from "./schemas/user.schema.ts";
 import { UpdateUserDto } from "./dto/user.dto.ts";
 
+
 @Controller("/user")
 export class UserController {
 
@@ -33,7 +34,7 @@ export class UserController {
 
   @UseGuards(SimpleGuard)
   @Post("update")
-  update(@Body() params: UpdateUserDto) {
+  update(@Body(UpdateUserDto) params: UpdateUserDto) {
     return userService.update(params.id, {
       email: params.email,
       username: params.username
