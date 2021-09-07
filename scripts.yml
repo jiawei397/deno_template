@@ -1,0 +1,36 @@
+# 使用denon dev启动服务
+scripts:
+  dev:
+    cmd: "deno run src/main.ts"
+    desc: "run my main.ts file"
+    allow:
+      - net
+      - env
+      - write
+      - read
+    unstable: true
+    tsconfig: "tsconfig.json"
+    # env:
+      # DEBUG: "true"
+#    inspect: "127.0.0.1:9229"
+#    lock: lock.json
+    # log: info
+  build:
+    cmd: "deno bundle src/main.ts main.js"
+    watch: false
+    unstable: true
+    env:
+      NODE_ENV: "production"
+  dist:
+    cmd: "deno run main.js"
+    desc: "run dist server"
+    allow:
+      - net
+      - env
+      - write
+    unstable: true
+    log: info
+    watch: false
+    env:
+      NODE_ENV: "production"
+      PORT: "2000"

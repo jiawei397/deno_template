@@ -1,0 +1,9 @@
+.idea
+.vscode
+.DS_Store
+*.js
+*.txt
+*.css
+*.map
+.deno_plugins
+/logs/

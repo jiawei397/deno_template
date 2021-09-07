@@ -1,0 +1,18 @@
+port: 3000
+apiPrefix: api
+db: 'mongodb://192.168.21.176:27018/test'
+redis: 'http://192.168.21.176:9902'
+ssoApi: "https://sso.uino.com/api/"
+ssoUserAgent: Wiki (Internal)
+log:
+  appenders:
+    dateFile:
+      filename: logs/deno
+      daysToKeep: 10
+      pattern: yyyy-MM-dd.log
+  categories:
+    default:
+      appenders:
+        - dateFile
+        - console
+      level: DEBUG
