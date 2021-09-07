@@ -97,3 +97,5 @@ export {
 import type { DateFileLogConfig } from "https://deno.land/x/date_file_log@v0.0.5/mod.ts";
 
 export type { DateFileLogConfig };
+
+export { connect } from "https://deno.land/x/redis/mod.ts";
