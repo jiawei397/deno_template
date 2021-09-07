@@ -10,7 +10,10 @@ export type Config = {
   log: DateFileLogConfig; //log4js配置
   ssoApi?: string; // sso的api地址，最近一个字符得是/
   ssoUserAgent?: string; // sso需要设置的userAgent
-  redis: string;
+  redis: {
+    hostname: string;
+    port: number;
+  };
 };
 
 
