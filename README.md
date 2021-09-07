@@ -30,6 +30,11 @@ deno cache --reload --lock=lock.json --lock-write --unstable deps.ts
 deno cache --reload=http://localhost:4507 --lock=lock.json --lock-write --unstable deps.ts
 ```
 
+新增依赖锁：
+```
+deno cache --lock=lock.json --lock-write --unstable deps.ts
+```
+
 ## 格式化
 
 ```shell
