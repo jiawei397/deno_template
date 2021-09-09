@@ -1,7 +1,9 @@
-import { connect } from "../../../deps.ts";
+import { connect, yellow } from "../../../deps.ts";
 import globals from "../../globals.ts";
 import { stringify, jsonParse } from "../../tools/utils.ts";
 const client = await connect(globals.redis);
+
+console.info('连接到redis', yellow(stringify(globals.redis)));
 
 class CacheService {
     //设置值的方法
