@@ -14,7 +14,7 @@ install_deps:
   script:
     - deno cache --lock lock.json --unstable deps.ts
   cache:
-    # key: ${CI_COMMIT_REF_SLUG}
+    key: ${CI_COMMIT_REF_SLUG}
     paths:
       - deno-dir
 
