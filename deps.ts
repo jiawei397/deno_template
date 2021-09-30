@@ -69,8 +69,6 @@ export {
 
 export type { SchemaCls } from "https://deno.land/x/jw_mongo@v0.24.12/mod.ts";
 
-export { Reflect } from "https://deno.land/x/reflect_metadata@v0.1.12/mod.ts";
-
 export {
   Contains,
   IsArray,

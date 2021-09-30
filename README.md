@@ -21,8 +21,6 @@ denon dev
 ## 锁定依赖
 
 ```
-deno cache --lock=lock.json --lock-write --unstable deps.ts
-
 deno cache --reload --lock=lock.json --unstable deps.ts
 
 deno cache --reload --lock=lock.json --lock-write --unstable deps.ts
