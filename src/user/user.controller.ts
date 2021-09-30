@@ -8,8 +8,8 @@ import {
   UseGuards,
 } from "../../deps.ts";
 import { userService } from "./services/user.service.ts";
-import { SimpleGuard } from "../guard/simple.guard.ts";
-import { AddUserDto, UpdateUserDto } from "./dto/user.dto.ts";
+import { SimpleGuard } from "../guards/simple.guard.ts";
+import { AddUserDto, UpdateUserDto } from "./dtos/user.dto.ts";
 
 
 @Controller("/user")

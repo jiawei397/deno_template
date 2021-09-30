@@ -1,6 +1,6 @@
 import { BaseService } from "../../tools/db.ts";
 import { logger } from "../../tools/log.ts";
-import { AddUserDto } from "../dto/user.dto.ts";
+import { AddUserDto } from "../dtos/user.dto.ts";
 import { User } from "../schemas/user.schema.ts";
 
 class UserService extends BaseService<User> {
