@@ -2,7 +2,7 @@
 import globals from "./globals.ts";
 import { logger } from "./tools/log.ts";
 
-import { Application } from "../deps.ts";
+import { Application, Context } from "../deps.ts";
 import myRouter from "./router.ts";
 
 const app = new Application();
@@ -11,7 +11,7 @@ const app = new Application();
 //   console.log(Deno.systemMemoryInfo());
 // }, 10000);
 
-app.use(async (ctx, next) => {
+app.use(async (ctx: Context, next: () => void) => {
   const start = Date.now();
   try {
     await next();

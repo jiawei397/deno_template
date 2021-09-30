@@ -1,7 +1,7 @@
 # 使用denon dev启动服务
 scripts:
   dev:
-    cmd: "deno run src/main.ts"
+    cmd: "deno run mod.ts"
     desc: "run my main.ts file"
     allow:
       - net
@@ -16,18 +16,19 @@ scripts:
     lock: lock.json
     # log: info
   build:
-    cmd: "deno bundle src/main.ts main.js"
+    cmd: "deno bundle mod.ts mod.js"
     watch: false
     unstable: true
     env:
       NODE_ENV: "production"
   dist:
-    cmd: "deno run main.js"
+    cmd: "deno run mod.js"
     desc: "run dist server"
     allow:
       - net
       - env
       - write
+      - read
     unstable: true
     log: info
     watch: false

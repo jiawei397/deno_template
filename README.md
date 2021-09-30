@@ -1,4 +1,4 @@
-# deno模板
+# deno
 
 ## 安装denon
 
@@ -9,25 +9,28 @@ deno install -qAf --unstable https://deno.land/x/denon/denon.ts
 ## 运行
 
 ```
-deno run --allow-net --allow-env --allow-write --allow-read --config tsconfig.json --unstable src/main.ts
+deno run --allow-net --allow-env --allow-write --allow-read --config tsconfig.json --unstable mod.ts
 
 # 或者直接用-A开启所有权限
-deno run -A router.ts
+deno run -A mod.ts
 
-# 测试
+# 开发
 denon dev
 ```
 
 ## 锁定依赖
 
 ```
-deno cache --lock=lock.json --lock-write --unstable deps.ts
-
 deno cache --reload --lock=lock.json --unstable deps.ts
 
 deno cache --reload --lock=lock.json --lock-write --unstable deps.ts
 
 deno cache --reload=http://localhost:4507 --lock=lock.json --lock-write --unstable deps.ts
+```
+
+新增依赖锁：
+```
+deno cache --lock=lock.json --lock-write --unstable deps.ts
 ```
 
 ## 格式化
@@ -39,7 +42,17 @@ deno fmt router.ts
 ## 打包
 
 ```
-deno bundle router.ts index.js
+deno bundle mod.ts mod.js
 
-deno compile --unstable router.ts
+deno compile --unstable mod.ts
+```
+
+或者使用denon：
+```
+denon build
+```
+
+运行打包后的结果：
+```
+denon dist
 ```
