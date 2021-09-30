@@ -1,0 +1,81 @@
+stages:
+  - install_deps
+  # - build
+  - docker
+  # - deploy
+  # - deploy-local
+
+# 安装依赖
+install_deps:
+  stage: install_deps
+  image: denoland/deno:alpine-1.14.1
+  variables:
+    DENO_DIR: deno-dir
+  script:
+    - deno cache --lock lock.json --unstable deps.ts
+  cache:
+    # key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - deno-dir
+
+# build:
+#   stage: build
+#   image: denoland/deno:alpine-1.14.1
+#   script:
+#     - deno bundle --unstable mod.ts mod.js
+#   cache:
+#     key: ${CI_COMMIT_REF_SLUG}
+#     paths:
+#       - /deno-dir/deps
+#       - mod.js
+
+docker:
+  stage: docker
+  variables:
+    CI_DOCKERFILE: Dockerfile
+    CI_DOCKER_PROJECT: spacex
+    CI_DOCKER_REPO: xx-server
+  only:
+    - tags
+    - master
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    policy: pull
+    paths:
+      - ./deno-dir
+  script:
+    - docker_build
+
+# deploy:
+#   stage: deploy
+#   variables:
+#     CI_DOCKER_PROJECT: spacex
+#     CI_DOCKER_REPO: cdn-web
+#     CI_UPGRADE_HOSTNAME: cdn-file.uino.cn
+#     CI_UPGRADE_STRICT: minor
+#   cache: {}
+#   retry:
+#     max: 2
+#     when:
+#       - runner_system_failure
+#       - stuck_or_timeout_failure
+#   only:
+#     - tags
+#   script:
+#     - docker_deploy
+
+# deploy-local:
+#   stage: deploy-local
+#   variables:
+#     CI_DOCKER_PROJECT: spacex
+#     CI_DOCKER_REPO: study
+#   cache: {}
+#   retry:
+#     max: 2
+#     when:
+#       - runner_system_failure
+#       - stuck_or_timeout_failure
+#   only:
+#     - master
+#   script:
+#     - docker_deploy_local
