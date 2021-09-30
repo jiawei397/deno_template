@@ -33,7 +33,7 @@ class CacheService {
 
     //推送到数组第一项
     async unshift(key: string, value: any) {
-        value = JSON.stringify(value);
+        value = stringify(value);
         await client.lpush(key, value);
     }
 
