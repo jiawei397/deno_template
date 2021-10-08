@@ -13,7 +13,7 @@ const app = new Application();
 
 app.use(anyExceptionFilter({
   logger,
-  isHeaderResponseTime: false
+  isHeaderResponseTime: false,
 }));
 
 app.use(myRouter.routes());

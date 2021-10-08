@@ -15,7 +15,6 @@ export class UpdateUserDto {
   @IsString()
   email!: string;
 
-
   @IsString()
   id!: string;
 }

@@ -6,7 +6,6 @@ export class User extends Schema {
   @Prop()
   id!: string;
 
-
   @Prop({
     required: true,
   })

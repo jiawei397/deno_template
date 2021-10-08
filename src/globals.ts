@@ -1,7 +1,6 @@
 import { DateFileLogConfig } from "../deps.ts";
 import { readYaml } from "./tools/utils.ts";
 
-
 export type Config = {
   apiPrefix: string;
   db: string;
@@ -15,7 +14,6 @@ export type Config = {
     port: number;
   };
 };
-
 
 const config = await readYaml("config/server") as Config;
 

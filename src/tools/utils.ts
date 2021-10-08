@@ -1,6 +1,5 @@
 import { Cache, isDist, OakCookie, YamlLoader } from "../../deps.ts";
 
-
 const yamlLoader = new YamlLoader();
 
 const yamlPageCache = new Cache(5 * 60 * 1000);

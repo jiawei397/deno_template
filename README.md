@@ -29,6 +29,7 @@ deno cache --reload=http://localhost:4507 --lock=lock.json --lock-write --unstab
 ```
 
 新增依赖锁：
+
 ```
 deno cache --lock=lock.json --lock-write --unstable deps.ts
 ```
@@ -48,11 +49,13 @@ deno compile --unstable mod.ts
 ```
 
 或者使用denon：
+
 ```
 denon build
 ```
 
 运行打包后的结果：
+
 ```
 denon dist
 ```

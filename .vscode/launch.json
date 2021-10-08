@@ -10,7 +10,15 @@
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "deno",
-      "runtimeArgs": ["run", "--inspect-brk", "-A", "--config", "tsconfig.json", "--unstable", "${file}"],
+      "runtimeArgs": [
+        "run",
+        "--inspect-brk",
+        "-A",
+        "--config",
+        "tsconfig.json",
+        "--unstable",
+        "${file}"
+      ],
       "attachSimplePort": 9229
     }
   ]
