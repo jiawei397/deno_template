@@ -1,4 +1,5 @@
 # 使用denon dev启动服务
+version: 0.0.3
 scripts:
   dev:
     cmd: "deno run mod.ts"

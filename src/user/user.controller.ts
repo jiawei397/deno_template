@@ -44,7 +44,7 @@ export class UserController {
     if (!id) {
       throw new BadRequestException(`id is required`);
     }
-    console.log(id);
+    console.log('id = ', id);
     return userService.findById(id);
   }
 }

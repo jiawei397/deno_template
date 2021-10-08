@@ -15,12 +15,22 @@ export type Config = {
   };
 };
 
-const config = await readYaml("config/server") as Config;
+const config = await readYaml("config/server.yaml") as Config;
 
 if (!config) {
   Deno.exit(1);
 }
 
+export type ScriptsConfig = {
+  version: string;
+}
+
+const scriptsConfig: ScriptsConfig = await readYaml("scripts.yml");
+
+if (!scriptsConfig) {
+  Deno.exit(1);
+}
+
 export default config;
 
-export const version = "0.0.2";
+export const version = scriptsConfig.version;
