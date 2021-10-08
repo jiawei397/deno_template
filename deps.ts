@@ -89,8 +89,10 @@ export {
 export {
   getLogger,
   initLog,
-} from "https://deno.land/x/date_file_log@v0.0.5/mod.ts";
+} from "https://deno.land/x/date_file_log@v0.1.9/mod.ts";
 
-export type { DateFileLogConfig } from "https://deno.land/x/date_file_log@v0.0.5/mod.ts";
+export type { DateFileLogConfig } from "https://deno.land/x/date_file_log@v0.1.9/mod.ts";
 
-export { connect } from "https://deno.land/x/redis@v0.24.0/mod.ts";
+export type { Redis } from "https://deno.land/x/jw_utils@v0.0.4/mod.ts";
+
+export { Cache, RedisService, jsonParse, stringify, isDist, anyExceptionFilter } from 'https://deno.land/x/jw_utils@v0.0.4/mod.ts'
