@@ -1,0 +1,35 @@
+version: 0.0.2
+name: deno_template
+scripts:
+  dev:
+    cmd: deno run mod.ts
+    desc: run my main.ts file
+    allow:
+      - net
+      - env
+      - write
+      - read
+    unstable: true
+    tsconfig: tsconfig.json
+    lock: lock.json
+  build:
+    cmd: deno bundle mod.ts mod.js
+    watch: false
+    unstable: true
+    env:
+      NODE_ENV: production
+  dist:
+    cmd: deno run mod.js
+    desc: run dist server
+    allow:
+      - net
+      - env
+      - write
+      - read
+    unstable: true
+    log: info
+    watch: false
+    tsconfig: tsconfig.json
+    env:
+      NODE_ENV: production
+      PORT: '2000'
