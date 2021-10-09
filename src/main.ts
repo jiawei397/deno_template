@@ -1,4 +1,3 @@
-// deno bundle main.ts | esbuild --minify > main.min.js
 import globals from "./globals.ts";
 import { logger } from "./tools/log.ts";
 import { anyExceptionFilter, Application } from "../deps.ts";

@@ -47,6 +47,8 @@ deno fmt
 ```
 deno bundle mod.ts mod.js
 
+deno bundle main.ts | esbuild --minify > main.min.js
+
 deno compile --unstable mod.ts
 ```
 

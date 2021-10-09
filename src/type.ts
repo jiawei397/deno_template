@@ -1,6 +1,2 @@
-export interface RSAInfo {
-  userId: string;
-  username: string;
-  token: string;
-  expires: number;
-}
+// 添加interface或type
+
