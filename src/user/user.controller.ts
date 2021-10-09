@@ -5,21 +5,28 @@ import {
   Get,
   Post,
   Query,
+  SSOUserInfo,
   UseGuards,
 } from "../../deps.ts";
 import { userService } from "./services/user.service.ts";
-import { SimpleGuard } from "../guards/simple.guard.ts";
+import { SSOGuard } from "../guards/sso.guard.ts";
 import { AddUserDto, UpdateUserDto } from "./dtos/user.dto.ts";
+import { UserParam } from "./user.decorator.ts";
 
 @Controller("/user")
+@UseGuards(SSOGuard)
 export class UserController {
-  @UseGuards(SimpleGuard)
+
+  @Get('userinfo')
+  userinfo(@UserParam() user: SSOUserInfo) {
+    return user;
+  }
+
   @Post("add")
   add(@Body(AddUserDto) params: AddUserDto) {
     return userService.save(params);
   }
 
-  @UseGuards(SimpleGuard)
   @Get("delete")
   deleteById(@Query("id") id: string) {
     if (!id) {
@@ -29,7 +36,6 @@ export class UserController {
     return userService.deleteById(id);
   }
 
-  @UseGuards(SimpleGuard)
   @Post("update")
   update(@Body(UpdateUserDto) params: UpdateUserDto) {
     return userService.update(params.id, {
@@ -38,7 +44,6 @@ export class UserController {
     });
   }
 
-  @UseGuards(SimpleGuard)
   @Get("query")
   query(@Query("id") id: string) {
     if (!id) {

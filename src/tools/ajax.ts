@@ -19,7 +19,7 @@ export class Ajax extends BaseAjax {
 const instance = new Ajax();
 
 export const ajax = <T>(config: AjaxConfig) => {
-  return instance.ajax(config);
+  return instance.ajax<T>(config);
 };
 
 export const get = instance.get.bind(instance);

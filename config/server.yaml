@@ -4,7 +4,7 @@ db: 'mongodb://192.168.21.176:27018/test'
 redis: 
   hostname: '192.168.21.176'
   port: 6379
-ssoApi: "https://sso.uino.com/api/"
+ssoApi: "http://sso.uino.local/api/"
 ssoUserAgent: Template (Internal)
 log:
   appenders:
