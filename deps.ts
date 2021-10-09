@@ -92,7 +92,7 @@ export {
 
 export type { DateFileLogConfig } from "https://deno.land/x/date_file_log@v0.1.9/mod.ts";
 
-export type { Redis } from "https://deno.land/x/jw_utils@v0.0.4/mod.ts";
+export type { Redis } from "https://deno.land/x/jw_utils@v0.0.5/mod.ts";
 
 export {
   anyExceptionFilter,
@@ -101,6 +101,6 @@ export {
   jsonParse,
   RedisService,
   stringify,
-} from "https://deno.land/x/jw_utils@v0.0.4/mod.ts";
+} from "https://deno.land/x/jw_utils@v0.0.5/mod.ts";
 
 export { posix } from "https://deno.land/std@0.110.0/path/mod.ts";

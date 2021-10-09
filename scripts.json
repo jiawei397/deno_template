@@ -34,6 +34,7 @@
       "unstable": true,
       "log": "info",
       "watch": false,
+      "tsconfig": "tsconfig.json",
       "env": {
         "NODE_ENV": "production",
         "PORT": "2000"

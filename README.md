@@ -14,7 +14,7 @@ deno run --allow-net --allow-env --allow-write --allow-read --config tsconfig.js
 # 或者直接用-A开启所有权限
 deno run -A mod.ts
 
-# 开发
+# 或者使用demon
 denon dev
 ```
 
@@ -37,7 +37,7 @@ deno cache --lock=lock.json --lock-write --unstable deps.ts
 ## 格式化
 
 ```shell
-deno fmt router.ts
+deno fmt
 ```
 
 ## 打包

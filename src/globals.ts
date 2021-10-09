@@ -21,16 +21,4 @@ if (!config) {
   Deno.exit(1);
 }
 
-export type ScriptsConfig = {
-  version: string;
-}
-
-const scriptsConfig: ScriptsConfig = await readYaml("scripts.yml");
-
-if (!scriptsConfig) {
-  Deno.exit(1);
-}
-
 export default config;
-
-export const version = scriptsConfig.version;
