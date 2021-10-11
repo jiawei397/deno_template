@@ -2,8 +2,7 @@ stages:
   - install_deps
   # - build
   - docker
-  # - deploy
-  # - deploy-local
+  - deploy
 
 # 安装依赖
 install_deps:
@@ -33,8 +32,8 @@ docker:
   stage: docker
   variables:
     CI_DOCKERFILE: Dockerfile
-    CI_DOCKER_PROJECT: spacex
-    CI_DOCKER_REPO: xx-server
+    CI_DOCKER_PROJECT: kiss
+    CI_DOCKER_REPO: auth-server
   only:
     - tags
     - master
@@ -64,18 +63,20 @@ docker:
 #   script:
 #     - docker_deploy
 
-# deploy-local:
-#   stage: deploy-local
-#   variables:
-#     CI_DOCKER_PROJECT: spacex
-#     CI_DOCKER_REPO: study
-#   cache: {}
-#   retry:
-#     max: 2
-#     when:
-#       - runner_system_failure
-#       - stuck_or_timeout_failure
-#   only:
-#     - master
-#   script:
-#     - docker_deploy_local
+deploy-local:
+  stage: deploy
+  variables:
+    CI_DOCKER_PROJECT: kiss
+    CI_DOCKER_REPO: auth-server
+    CI_UPGRADE_HOSTNAME: auth.spacex.uino.local
+    CI_UPGRADE_STRICT: minor
+  cache: {}
+  retry:
+    max: 2
+    when:
+      - runner_system_failure
+      - stuck_or_timeout_failure
+  only:
+    - master
+  script:
+    - docker_deploy_local
