@@ -1,15 +1,29 @@
 stages:
+  - lint
   - install_deps
   # - build
   - docker
   - deploy
 
+# deno镜像模板
+.deno_image: &imageDef
+  image: denoland/deno:alpine-1.14.1
+
+lint:
+  stage: lint
+  <<: *imageDef
+  script:
+    - deno lint
+  cache: {}  
+
 # 安装依赖
 install_deps:
   stage: install_deps
-  image: denoland/deno:alpine-1.14.1
+  <<: *imageDef
   variables:
     DENO_DIR: deno-dir
+  only:
+    - master  
   script:
     - deno cache --lock lock.json --unstable deps.ts
   cache:
@@ -32,8 +46,8 @@ docker:
   stage: docker
   variables:
     CI_DOCKERFILE: Dockerfile
-    CI_DOCKER_PROJECT: kiss
-    CI_DOCKER_REPO: auth-server
+    CI_DOCKER_PROJECT: xx
+    CI_DOCKER_REPO: xxx-server
   only:
     - tags
     - master
@@ -67,8 +81,8 @@ deploy-local:
   stage: deploy
   variables:
     CI_DOCKER_PROJECT: kiss
-    CI_DOCKER_REPO: auth-server
-    CI_UPGRADE_HOSTNAME: auth.spacex.uino.local
+    CI_DOCKER_REPO: xx-server
+    CI_UPGRADE_HOSTNAME: xx.spacex.uino.local
     CI_UPGRADE_STRICT: minor
   cache: {}
   retry:

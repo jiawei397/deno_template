@@ -36,6 +36,12 @@ deno cache --reload=http://localhost:4507 --lock=lock.json --lock-write --unstab
 deno cache --lock=lock.json --lock-write --unstable deps.ts
 ```
 
+## 校验
+
+```shell
+deno lint
+```
+
 ## 格式化
 
 ```shell
