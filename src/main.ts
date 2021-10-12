@@ -13,6 +13,6 @@ app.use(anyExceptionFilter({
 
 app.use(router.routes());
 
-const port = Number(Deno.env.get('PORT') || globals.port);
+const port = Number(Deno.env.get("PORT") || globals.port);
 logger.info(`app start with: http://localhost:${port}`);
 await app.listen({ port });

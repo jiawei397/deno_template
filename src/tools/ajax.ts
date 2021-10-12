@@ -2,8 +2,8 @@ import { AjaxConfig, BaseAjax } from "../../deps.ts";
 
 export class Ajax extends BaseAjax {
   /**
-     * 处理错误请求
-     */
+   * 处理错误请求
+   */
   protected handleErrorResponse(response: Response) {
     console.error(
       `HTTP error, status = ${response.status}, statusText = ${response.statusText}`,

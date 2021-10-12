@@ -16,8 +16,7 @@ import { UserParam } from "./user.decorator.ts";
 @Controller("/user")
 @UseGuards(SSOGuard)
 export class UserController {
-
-  @Get('userinfo')
+  @Get("userinfo")
   userinfo(@UserParam() user: SSOUserInfo) {
     return user;
   }
@@ -49,7 +48,7 @@ export class UserController {
     if (!id) {
       throw new BadRequestException(`id is required`);
     }
-    console.log('id = ', id);
+    console.log("id = ", id);
     return userService.findById(id);
   }
 }

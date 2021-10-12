@@ -22,11 +22,11 @@ if (!config) {
 }
 
 if (config.ssoApi) {
-  Deno.env.set('ssoApi', config.ssoApi);
+  Deno.env.set("ssoApi", config.ssoApi);
 }
 
 if (config.ssoUserAgent) {
-  Deno.env.set('ssoUserAgent', config.ssoUserAgent);
+  Deno.env.set("ssoUserAgent", config.ssoUserAgent);
 }
 
 export default config;

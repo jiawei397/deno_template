@@ -1,4 +1,4 @@
-import { Cache, isDist, OakCookie, YamlLoader, posix } from "../../deps.ts";
+import { Cache, isDist, OakCookie, posix, YamlLoader } from "../../deps.ts";
 
 const yamlLoader = new YamlLoader();
 
@@ -13,7 +13,7 @@ export async function readYaml(path: string) {
     }
     let allPath = path;
     if (!/\.(yaml|yml)$/.test(path)) {
-      allPath += '.yaml';
+      allPath += ".yaml";
     }
     const data = await yamlLoader.parseFile(allPath);
     yamlPageCache.set(path, data);
@@ -54,5 +54,5 @@ export const cookie = {
 };
 
 export function formatUrl(url: string) {
-  return posix.join('/', url);
+  return posix.join("/", url);
 }
