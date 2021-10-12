@@ -58,9 +58,9 @@ export {
 export {
   getLogger,
   initLog,
-} from "https://deno.land/x/date_file_log@v0.1.9/mod.ts";
+} from "https://deno.land/x/date_file_log@v0.1.13/mod.ts";
 
-export type { DateFileLogConfig } from "https://deno.land/x/date_file_log@v0.1.9/mod.ts";
+export type { DateFileLogConfig } from "https://deno.land/x/date_file_log@v0.1.13/mod.ts";
 
 export type {
   CanActivate,
