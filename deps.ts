@@ -1,33 +1,3 @@
-export {
-  Application,
-  BadRequestException,
-  Body,
-  Context,
-  Controller,
-  Cookies,
-  createParamDecorator,
-  ForbiddenException,
-  Get,
-  Header,
-  Headers,
-  isHttpError,
-  OakCookie,
-  Post,
-  Query,
-  Req,
-  Request,
-  Res,
-  Response,
-  Router,
-  send,
-  Status,
-  UnauthorizedException,
-  UseGuards,
-} from "https://deno.land/x/oak_nest@v0.0.23/mod.ts";
-
-// 类型需要这样导出，不然会报重复导出
-export type { CanActivate } from "https://deno.land/x/oak_nest@v0.0.23/mod.ts";
-
 export { join } from "https://deno.land/std@0.97.0/path/mod.ts";
 
 export {
@@ -83,7 +53,7 @@ export {
   Min,
   validate,
   validateOrReject,
-} from "https://deno.land/x/deno_class_validator@v0.0.2/mod.ts";
+} from "https://deno.land/x/deno_class_validator@v1.0.0/mod.ts";
 
 export {
   getLogger,
@@ -92,9 +62,33 @@ export {
 
 export type { DateFileLogConfig } from "https://deno.land/x/date_file_log@v0.1.9/mod.ts";
 
-export type { Redis, SSOUserInfo } from "https://deno.land/x/jw_utils@v0.0.11/mod.ts";
+export type { Redis, SSOUserInfo, CanActivate } from "https://deno.land/x/jw_utils@v0.0.12/mod.ts";
 
 export {
+  Application,
+  BadRequestException,
+  Body,
+  Context,
+  Controller,
+  Cookies,
+  createParamDecorator,
+  ForbiddenException,
+  Get,
+  Header,
+  Headers,
+  isHttpError,
+  OakCookie,
+  Post,
+  Query,
+  Req,
+  Request,
+  Res,
+  Response,
+  Router,
+  send,
+  Status,
+  UnauthorizedException,
+  UseGuards,
   anyExceptionFilter,
   Cache,
   isDist,
@@ -102,6 +96,6 @@ export {
   RedisService,
   stringify,
   SSOGuard,
-} from "https://deno.land/x/jw_utils@v0.0.11/mod.ts";
+} from "https://deno.land/x/jw_utils@v0.0.12/mod.ts";
 
 export { posix } from "https://deno.land/std@0.110.0/path/mod.ts";
