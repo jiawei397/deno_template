@@ -48,7 +48,7 @@ export const cookie = {
     });
   },
 
-  get(cookies: OakCookie, key: string): any {
+  get(cookies: OakCookie, key: string) {
     return cookies.get(key);
   },
 };
