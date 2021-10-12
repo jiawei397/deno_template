@@ -11,8 +11,11 @@ router.get(formatUrl(globals.apiPrefix), async (ctx) => {
   ctx.response.body = scriptsConfig.version;
 });
 
+router.get("/healthz", (ctx) => {
+  ctx.response.body = "ok";
+});
+
 router.add(UserController);
 router.setGlobalPrefix(globals.apiPrefix);
-
 
 export default router;
