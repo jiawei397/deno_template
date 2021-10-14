@@ -24,7 +24,9 @@ class UserService extends BaseService<User> {
   }
 
   update(id: string, data: Partial<User>): Promise<User> {
-    return this.model.findOneAndUpdate({ _id: id }, data, {
+    return this.model.findByIdAndUpdate(id, {
+      $set: data,
+    }, {
       new: true,
     }) as Promise<User>;
   }

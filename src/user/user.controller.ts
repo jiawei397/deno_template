@@ -16,7 +16,7 @@ import { UserParam } from "./user.decorator.ts";
 @Controller("/user")
 @UseGuards(SSOGuard)
 export class UserController {
-  @Get("userinfo")
+  @Get("info")
   userinfo(@UserParam() user: SSOUserInfo) {
     return user;
   }
