@@ -4,11 +4,11 @@ import { AddUserDto } from "../dtos/user.dto.ts";
 import { User } from "../schemas/user.schema.ts";
 
 class UserService extends BaseService<User> {
-  async save(createUserDto: AddUserDto): Promise<User> {
-    const res = await this.model.insertOne(createUserDto);
+  async save(createUserDto: AddUserDto): Promise<string> {
+    const id = await this.model.insertOne(createUserDto);
     logger.debug(`创建用户【${createUserDto.username}】成功！`);
-    console.log(res);
-    return res as User;
+    console.log(id);
+    return id;
   }
 
   findById(id: string): Promise<User | undefined> {
