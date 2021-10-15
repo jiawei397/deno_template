@@ -1,9 +1,10 @@
 port: 3000
 apiPrefix: api
 db: 'mongodb://192.168.21.176:27018/test'
-redis: 
-  hostname: '192.168.21.176'
-  port: 6379
+# db: 'mongodb://192.168.21.176:27019,192.168.21.176:27020,192.168.21.176:27021/test'
+# redis: 
+#   hostname: '192.168.21.176'
+#   port: 6379
 ssoApi: "http://sso.uino.local/api/"
 ssoUserAgent: Template (Internal)
 log:
