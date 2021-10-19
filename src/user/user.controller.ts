@@ -12,11 +12,13 @@ import { userService } from "./services/user.service.ts";
 import { SSOGuard } from "../guards/sso.guard.ts";
 import { AddUserDto, UpdateUserDto } from "./dtos/user.dto.ts";
 import { UserParam } from "./user.decorator.ts";
+import { LogTime } from "../tools/log.ts";
 
 @Controller("/user")
 @UseGuards(SSOGuard)
 export class UserController {
   @Get("info")
+  @LogTime(UserController.name)
   userinfo(@UserParam() user: SSOUserInfo) {
     return user;
   }
