@@ -58,15 +58,15 @@ export {
 export {
   getLogger,
   initLog,
-} from "https://deno.land/x/date_file_log@v0.1.13/mod.ts";
+} from "https://deno.land/x/date_file_log@v0.1.17/mod.ts";
 
-export type { DateFileLogConfig } from "https://deno.land/x/date_file_log@v0.1.13/mod.ts";
+export type { DateFileLogConfig } from "https://deno.land/x/date_file_log@v0.1.17/mod.ts";
 
 export type {
   CanActivate,
   Redis,
   SSOUserInfo,
-} from "https://deno.land/x/jw_utils@v0.0.12/mod.ts";
+} from "https://deno.land/x/jw_utils@v0.1.4/mod.ts";
 
 export {
   anyExceptionFilter,
@@ -100,6 +100,6 @@ export {
   stringify,
   UnauthorizedException,
   UseGuards,
-} from "https://deno.land/x/jw_utils@v0.0.12/mod.ts";
+} from "https://deno.land/x/jw_utils@v0.1.4/mod.ts";
 
 export { posix } from "https://deno.land/std@0.110.0/path/mod.ts";
