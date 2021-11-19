@@ -1,6 +1,7 @@
 import {
   BadRequestException,
   Body,
+  Context,
   Controller,
   Get,
   Post,
@@ -52,5 +53,15 @@ export class UserController {
     }
     console.log("id = ", id);
     return userService.findById(id);
+  }
+
+  @Post("upload")
+  async upload(ctx: Context) {
+    const data = ctx.request.body({
+      type: "form-data",
+    });
+    const result = await data.value.read();
+    console.log("---upload----", result);
+    ctx.response.body = "upload ok";
   }
 }
