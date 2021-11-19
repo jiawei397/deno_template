@@ -1,7 +1,6 @@
 import {
   BadRequestException,
   Body,
-  Context,
   Controller,
   Get,
   Post,
@@ -9,6 +8,7 @@ import {
   SSOUserInfo,
   UseGuards,
 } from "../../deps.ts";
+import type { Context } from "../../deps.ts";
 import { userService } from "./services/user.service.ts";
 import { SSOGuard } from "../guards/sso.guard.ts";
 import { AddUserDto, UpdateUserDto } from "./dtos/user.dto.ts";

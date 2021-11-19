@@ -65,7 +65,7 @@ export type {
   CanActivate,
   Redis,
   SSOUserInfo,
-} from "https://deno.land/x/jw_utils@v0.2.0/mod.ts";
+} from "https://deno.land/x/jw_utils@v0.3.3/mod.ts";
 
 export {
   anyExceptionFilter,
@@ -100,6 +100,6 @@ export {
   stringify,
   UnauthorizedException,
   UseGuards,
-} from "https://deno.land/x/jw_utils@v0.2.0/mod.ts";
+} from "https://deno.land/x/jw_utils@v0.3.3/mod.ts";
 
 export { posix } from "https://deno.land/std@0.110.0/path/mod.ts";
