@@ -62,44 +62,47 @@ export {
 export type { DateFileLogConfig } from "https://deno.land/x/date_file_log@v0.1.17/mod.ts";
 
 export type {
-  CanActivate,
   Redis,
   SSOUserInfo,
-} from "https://deno.land/x/jw_utils@v0.3.3/mod.ts";
+} from "https://deno.land/x/jw_utils@v0.4.0/mod.ts";
 
+export { anyExceptionFilter } from "https://deno.land/x/oak_exception@v0.0.4/mod.ts";
+
+export type { CanActivate } from "https://deno.land/x/oak_nest@v0.4.1/mod.ts";
 export {
-  anyExceptionFilter,
   Application,
-  BadRequestException,
   Body,
-  Cache,
   Context,
   Controller,
   Cookies,
   createParamDecorator,
-  ForbiddenException,
   Get,
   Header,
   Headers,
-  isDist,
   isHttpError,
-  jsonParse,
-  logTime,
   OakCookie,
   Post,
   Query,
-  RedisService,
   Req,
   Request,
   Res,
   Response,
   Router,
   send,
-  SSOGuard,
   Status,
-  stringify,
   UnauthorizedException,
   UseGuards,
-} from "https://deno.land/x/jw_utils@v0.3.3/mod.ts";
+} from "https://deno.land/x/oak_nest@v0.4.1/mod.ts";
+
+export {
+  Cache,
+  isDist,
+  logTime,
+  RedisService,
+  SSOGuard,
+  stringify,
+} from "https://deno.land/x/jw_utils@v0.4.0/mod.ts";
 
 export { posix } from "https://deno.land/std@0.110.0/path/mod.ts";
+
+export { BadRequestException } from "https://deno.land/x/oak_exception@v0.0.4/mod.ts";

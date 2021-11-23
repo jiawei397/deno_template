@@ -25,7 +25,7 @@ export class UserController {
   }
 
   @Post("add")
-  add(@Body(AddUserDto) params: AddUserDto) {
+  add(@Body() params: AddUserDto) {
     return userService.save(params);
   }
 
@@ -39,7 +39,7 @@ export class UserController {
   }
 
   @Post("update")
-  update(@Body(UpdateUserDto) params: UpdateUserDto) {
+  update(@Body() params: UpdateUserDto) {
     return userService.update(params.id, {
       email: params.email,
       username: params.username,
