@@ -1,8 +1,11 @@
 version: 0.0.5
 name: deno_template
 scripts:
+  check:
+    cmd: deno run --allow-read --allow-env https://deno.land/x/jw_cli@v0.2.3/cli/valid_deps.ts
+    watch: false
   dev:
-    cmd: deno run mod.ts
+    cmd: denon check && deno run mod.ts
     desc: run my main.ts file
     allow:
       - net
@@ -11,7 +14,7 @@ scripts:
       - read
     unstable: true
     tsconfig: tsconfig.json
-    lock: lock.json
+    # lock: lock.json
   build:
     cmd: deno bundle mod.ts mod.js
     watch: false
