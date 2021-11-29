@@ -33,9 +33,9 @@ export {
   MongoClient,
   Prop,
   Schema,
-} from "https://deno.land/x/jw_mongo@v0.25.1/mod.ts";
+} from "https://deno.land/x/deno_mongo_schema@v0.0.1/mod.ts";
 
-export type { SchemaCls } from "https://deno.land/x/jw_mongo@v0.25.1/mod.ts";
+export type { SchemaCls } from "https://deno.land/x/deno_mongo_schema@v0.0.1/mod.ts";
 
 export {
   Contains,

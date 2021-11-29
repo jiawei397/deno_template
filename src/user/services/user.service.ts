@@ -8,7 +8,7 @@ class UserService extends BaseService<User> {
     const id = await this.model.insertOne(createUserDto);
     logger.debug(`创建用户【${createUserDto.username}】成功！`);
     console.log(id);
-    return id;
+    return id.toString();
   }
 
   findById(id: string): Promise<User | undefined> {
