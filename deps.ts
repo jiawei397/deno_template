@@ -33,9 +33,9 @@ export {
   MongoClient,
   Prop,
   Schema,
-} from "https://deno.land/x/jw_mongo@v0.24.17/mod.ts";
+} from "https://deno.land/x/jw_mongo@v0.25.1/mod.ts";
 
-export type { SchemaCls } from "https://deno.land/x/jw_mongo@v0.24.17/mod.ts";
+export type { SchemaCls } from "https://deno.land/x/jw_mongo@v0.25.1/mod.ts";
 
 export {
   Contains,
@@ -66,8 +66,6 @@ export type {
   SSOUserInfo,
 } from "https://deno.land/x/jw_utils@v0.4.0/mod.ts";
 
-export { anyExceptionFilter } from "https://deno.land/x/oak_exception@v0.0.4/mod.ts";
-
 export type { CanActivate } from "https://deno.land/x/oak_nest@v0.4.1/mod.ts";
 export {
   Application,
@@ -90,7 +88,6 @@ export {
   Router,
   send,
   Status,
-  UnauthorizedException,
   UseGuards,
 } from "https://deno.land/x/oak_nest@v0.4.1/mod.ts";
 
@@ -105,4 +102,8 @@ export {
 
 export { posix } from "https://deno.land/std@0.110.0/path/mod.ts";
 
-export { BadRequestException } from "https://deno.land/x/oak_exception@v0.0.4/mod.ts";
+export {
+  anyExceptionFilter,
+  BadRequestException,
+  UnauthorizedException,
+} from "https://deno.land/x/oak_exception@v0.0.4/mod.ts";

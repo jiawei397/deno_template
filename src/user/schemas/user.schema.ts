@@ -1,8 +1,6 @@
 import { Prop, Schema } from "../../../deps.ts";
 
 export class User extends Schema {
-  _id!: string;
-
   @Prop({
     required: true,
   })
