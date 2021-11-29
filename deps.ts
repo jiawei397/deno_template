@@ -66,7 +66,7 @@ export type {
   SSOUserInfo,
 } from "https://deno.land/x/jw_utils@v0.4.0/mod.ts";
 
-export type { CanActivate } from "https://deno.land/x/oak_nest@v0.4.1/mod.ts";
+export type { CanActivate } from "https://deno.land/x/oak_nest@v0.4.2/mod.ts";
 export {
   Application,
   Body,
@@ -89,7 +89,7 @@ export {
   send,
   Status,
   UseGuards,
-} from "https://deno.land/x/oak_nest@v0.4.1/mod.ts";
+} from "https://deno.land/x/oak_nest@v0.4.2/mod.ts";
 
 export {
   Cache,
