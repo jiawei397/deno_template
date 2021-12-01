@@ -1,9 +1,9 @@
-import globals from "./globals.ts";
+import { AppModule } from "./app.module.ts";
 import { logger } from "./tools/log.ts";
-import { anyExceptionFilter, Application } from "../deps.ts";
-import router from "./router.ts";
+import { anyExceptionFilter, NestFactory } from "../deps.ts";
+import globals from "./globals.ts";
 
-const app = new Application();
+const app = await NestFactory.create(AppModule);
 
 // must before router
 app.use(anyExceptionFilter({
@@ -11,7 +11,13 @@ app.use(anyExceptionFilter({
   isHeaderResponseTime: false,
 }));
 
-app.use(router.routes());
+app.get("/healthz", (ctx) => {
+  ctx.response.body = "ok";
+});
+
+app.setGlobalPrefix(globals.apiPrefix);
+
+app.use(app.routes());
 
 const port = Number(Deno.env.get("PORT") || globals.port);
 logger.info(`app start with: http://localhost:${port}`);

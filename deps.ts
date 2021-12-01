@@ -26,16 +26,18 @@ export type { AjaxConfig } from "https://deno.land/x/jw_fetch@v0.1.6/mod.ts";
 export {
   BaseService,
   Bson,
-  Collection,
   Database,
   getDB,
   getModel,
+  InjectModel,
+  Model,
   MongoClient,
+  MongoFactory,
   Prop,
   Schema,
-} from "https://deno.land/x/deno_mongo_schema@v0.0.1/mod.ts";
+} from "https://deno.land/x/deno_mongo_schema@v0.1.2/mod.ts";
 
-export type { SchemaCls } from "https://deno.land/x/deno_mongo_schema@v0.0.1/mod.ts";
+export type { SchemaCls } from "https://deno.land/x/deno_mongo_schema@v0.1.2/mod.ts";
 
 export {
   Contains,
@@ -66,7 +68,7 @@ export type {
   SSOUserInfo,
 } from "https://deno.land/x/jw_utils@v0.4.0/mod.ts";
 
-export type { CanActivate } from "https://deno.land/x/oak_nest@v0.4.2/mod.ts";
+export type { CanActivate } from "https://deno.land/x/oak_nest@v0.5.0/mod.ts";
 export {
   Application,
   Body,
@@ -77,10 +79,14 @@ export {
   Get,
   Header,
   Headers,
+  Injectable,
   isHttpError,
+  Module,
+  NestFactory,
   OakCookie,
   Post,
   Query,
+  Reflect,
   Req,
   Request,
   Res,
@@ -89,14 +95,14 @@ export {
   send,
   Status,
   UseGuards,
-} from "https://deno.land/x/oak_nest@v0.4.2/mod.ts";
+} from "https://deno.land/x/oak_nest@v0.5.0/mod.ts";
 
 export {
   Cache,
   isDist,
   logTime,
   RedisService,
-  SSOGuard,
+  SSOGuard as SSOGuardOrigin,
   stringify,
 } from "https://deno.land/x/jw_utils@v0.4.0/mod.ts";
 

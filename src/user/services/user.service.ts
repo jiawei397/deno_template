@@ -1,13 +1,15 @@
-import { BaseService } from "../../tools/db.ts";
+import { Injectable, InjectModel, Model } from "../../../deps.ts";
 import { logger } from "../../tools/log.ts";
 import { AddUserDto } from "../dtos/user.dto.ts";
 import { User } from "../schemas/user.schema.ts";
 
-class UserService extends BaseService<User> {
+@Injectable()
+export class UserService {
+  constructor(@InjectModel(User) private readonly model: Model<User>) {
+  }
   async save(createUserDto: AddUserDto): Promise<string> {
     const id = await this.model.insertOne(createUserDto);
     logger.debug(`创建用户【${createUserDto.username}】成功！`);
-    console.log(id);
     return id.toString();
   }
 
@@ -23,6 +25,17 @@ class UserService extends BaseService<User> {
     });
   }
 
+  findByName(name: string) {
+    return this.model.findMany({
+      username: name,
+    }, {
+      projection: {
+        username: 1,
+        email: 1,
+      },
+    });
+  }
+
   update(id: string, data: Partial<User>): Promise<User> {
     return this.model.findByIdAndUpdate(id, {
       $set: data,
@@ -34,6 +47,8 @@ class UserService extends BaseService<User> {
   deleteById(id: string) {
     return this.model.deleteById(id);
   }
-}
 
-export const userService = new UserService(User);
+  syncIndex() {
+    return this.model.syncIndexes();
+  }
+}

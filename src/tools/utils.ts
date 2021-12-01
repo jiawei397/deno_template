@@ -4,23 +4,21 @@ const yamlLoader = new YamlLoader();
 
 const yamlPageCache = new Cache(5 * 60 * 1000);
 
-export async function readYaml(path: string) {
-  try {
-    const cache = yamlPageCache.get(path);
-    if (cache) {
-      console.debug(`read yaml [${path}] from cache`);
-      return cache;
-    }
-    let allPath = path;
-    if (!/\.(yaml|yml)$/.test(path)) {
-      allPath += ".yaml";
-    }
-    const data = await yamlLoader.parseFile(allPath);
-    yamlPageCache.set(path, data);
-    return data;
-  } catch (err) {
-    console.warn(`读取YAML[${path}.yaml]错误: ${err.message}`);
+export async function readYaml<T>(
+  path: string,
+): Promise<T> {
+  const cache = yamlPageCache.get(path);
+  if (cache) {
+    console.debug(`read yaml [${path}] from cache`);
+    return cache;
   }
+  let allPath = path;
+  if (!/\.(yaml|yml)$/.test(path)) {
+    allPath += ".yaml";
+  }
+  const data = await yamlLoader.parseFile(allPath);
+  yamlPageCache.set(path, data);
+  return data as T;
 }
 
 export const cookie = {

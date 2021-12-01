@@ -18,3 +18,8 @@ export class UpdateUserDto {
   @IsString()
   id!: string;
 }
+
+export class SearchUserDto {
+  @IsString()
+  username!: string;
+}

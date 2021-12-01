@@ -1,21 +1,7 @@
-import { DateFileLogConfig } from "../deps.ts";
 import { readYaml } from "./tools/utils.ts";
+import { Config } from "./type.ts";
 
-export type Config = {
-  apiPrefix: string;
-  db: string;
-  port: number;
-  staticPath?: string; //静态资源路径
-  log: DateFileLogConfig; //log4js配置
-  ssoApi?: string; // sso的api地址，最近一个字符得是/
-  ssoUserAgent?: string; // sso需要设置的userAgent
-  redis: {
-    hostname: string;
-    port: number;
-  };
-};
-
-const config = await readYaml("config/server.yaml") as Config;
+const config = await readYaml<Config>("config/server.yaml");
 
 if (!config) {
   Deno.exit(1);

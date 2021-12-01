@@ -9,15 +9,17 @@ import {
   UseGuards,
 } from "../../deps.ts";
 import type { Context } from "../../deps.ts";
-import { userService } from "./services/user.service.ts";
-import { SSOGuard } from "../guards/sso.guard.ts";
-import { AddUserDto, UpdateUserDto } from "./dtos/user.dto.ts";
+import { UserService } from "./services/user.service.ts";
+import { AddUserDto, SearchUserDto, UpdateUserDto } from "./dtos/user.dto.ts";
 import { UserParam } from "./user.decorator.ts";
 import { LogTime } from "../tools/log.ts";
+import { SSOGuard } from "../guards/sso.guard.ts";
 
 @Controller("/user")
 @UseGuards(SSOGuard)
 export class UserController {
+  constructor(private readonly userService: UserService) {}
+
   @Get("info")
   @LogTime(UserController.name)
   userinfo(@UserParam() user: SSOUserInfo) {
@@ -26,7 +28,7 @@ export class UserController {
 
   @Post("add")
   add(@Body() params: AddUserDto) {
-    return userService.save(params);
+    return this.userService.save(params);
   }
 
   @Get("delete")
@@ -35,12 +37,12 @@ export class UserController {
       throw new BadRequestException(`id is required`);
     }
     console.log(id);
-    return userService.deleteById(id);
+    return this.userService.deleteById(id);
   }
 
   @Post("update")
   update(@Body() params: UpdateUserDto) {
-    return userService.update(params.id, {
+    return this.userService.update(params.id, {
       email: params.email,
       username: params.username,
     });
@@ -52,7 +54,17 @@ export class UserController {
       throw new BadRequestException(`id is required`);
     }
     console.log("id = ", id);
-    return userService.findById(id);
+    return this.userService.findById(id);
+  }
+
+  @Get("syncIndex")
+  syncIndex() {
+    return this.userService.syncIndex();
+  }
+
+  @Post("search")
+  search(@Body() params: SearchUserDto) {
+    return this.userService.findByName(params.username);
   }
 
   @Post("upload")

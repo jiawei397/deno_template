@@ -8,6 +8,9 @@ export class User extends Schema {
 
   @Prop({
     required: true,
+    // index: true,
+    // sparse: true,
+    // unique: true,
   })
   username!: string;
 }
