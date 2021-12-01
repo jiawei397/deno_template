@@ -1,4 +1,5 @@
-import { Module, MongoFactory } from "../../deps.ts";
+import { Module } from "oak_nest";
+import { MongoFactory } from "deno_mongo_schema";
 import { User } from "./schemas/user.schema.ts";
 import { UserController } from "./user.controller.ts";
 

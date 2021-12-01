@@ -1,7 +1,7 @@
 /**
  * SSO安全守卫
  */
-import { SSOGuardOrigin } from "../../deps.ts";
+import { SSOGuard as SSOGuardOrigin } from "jw_utils";
 import { logger } from "../tools/log.ts";
 
 export const SSOGuard = SSOGuardOrigin({

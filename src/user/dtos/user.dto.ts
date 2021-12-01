@@ -1,4 +1,4 @@
-import { IsString } from "../../../deps.ts";
+import { IsString } from "deno_class_validator";
 
 export class AddUserDto {
   @IsString()

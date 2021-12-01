@@ -1,19 +1,11 @@
-import {
-  BadRequestException,
-  Body,
-  Controller,
-  Get,
-  Post,
-  Query,
-  SSOUserInfo,
-  UseGuards,
-} from "../../deps.ts";
-import type { Context } from "../../deps.ts";
+import { Body, Controller, Get, Post, Query, UseGuards } from "oak_nest";
+import type { Context } from "oak_nest";
 import { UserService } from "./services/user.service.ts";
 import { AddUserDto, SearchUserDto, UpdateUserDto } from "./dtos/user.dto.ts";
 import { UserParam } from "./user.decorator.ts";
 import { LogTime } from "../tools/log.ts";
 import { SSOGuard } from "../guards/sso.guard.ts";
+import { BadRequestException, SSOUserInfo } from "jw_utils";
 
 @Controller("/user")
 @UseGuards(SSOGuard)

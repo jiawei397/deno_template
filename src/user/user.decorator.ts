@@ -1,4 +1,4 @@
-import { Context, createParamDecorator } from "../../deps.ts";
+import { Context, createParamDecorator } from "oak_nest";
 
 export const UserParam = createParamDecorator(
   (ctx: Context) => {

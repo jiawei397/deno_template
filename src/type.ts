@@ -1,4 +1,4 @@
-import { DateFileLogConfig } from "../deps.ts";
+import { DateFileLogConfig } from "date_file_log";
 
 // 添加interface或type
 export type Config = {

@@ -1,7 +1,8 @@
 import { AppModule } from "./app.module.ts";
 import { logger } from "./tools/log.ts";
-import { anyExceptionFilter, NestFactory } from "../deps.ts";
+import { NestFactory } from "oak_nest";
 import globals from "./globals.ts";
+import { anyExceptionFilter } from "oak_exception";
 
 const app = await NestFactory.create(AppModule);
 

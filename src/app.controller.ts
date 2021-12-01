@@ -1,4 +1,4 @@
-import { Controller, Get } from "../deps.ts";
+import { Controller, Get } from "oak_nest";
 import { readYaml } from "./tools/utils.ts";
 import { Scripts } from "./type.ts";
 

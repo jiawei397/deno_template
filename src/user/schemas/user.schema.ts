@@ -1,4 +1,4 @@
-import { Prop, Schema } from "../../../deps.ts";
+import { Prop, Schema } from "deno_mongo_schema";
 
 export class User extends Schema {
   @Prop({

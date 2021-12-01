@@ -1,4 +1,4 @@
-import { AjaxConfig, BaseAjax } from "../../deps.ts";
+import { AjaxConfig, BaseAjax } from "jw_fetch";
 
 export class Ajax extends BaseAjax {
   /**

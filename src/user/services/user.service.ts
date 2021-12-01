@@ -1,4 +1,5 @@
-import { Injectable, InjectModel, Model } from "../../../deps.ts";
+import { Injectable } from "oak_nest";
+import { InjectModel, Model } from "deno_mongo_schema";
 import { logger } from "../../tools/log.ts";
 import { AddUserDto } from "../dtos/user.dto.ts";
 import { User } from "../schemas/user.schema.ts";
