@@ -1,13 +1,13 @@
 {
   "imports": {
-    "path/": "https://deno.land/std@0.97.0/path/",
+    "path/": "https://deno.land/std@0.117.0/path/",
     "yaml_loader": "https://deno.land/x/yaml_loader@v0.1.0/mod.ts",
     "jw_fetch": "https://deno.land/x/jw_fetch@v0.1.6/mod.ts",
-    "deno_mongo_schema": "https://deno.land/x/deno_mongo_schema@v0.1.4/mod.ts",
     "deno_class_validator": "https://deno.land/x/deno_class_validator@v1.0.0/mod.ts",
     "date_file_log": "https://deno.land/x/date_file_log@v0.1.17/mod.ts",
+    "oak_exception": "https://deno.land/x/oak_exception@v0.0.4/mod.ts",
     "jw_utils": "https://deno.land/x/jw_utils@v0.4.0/mod.ts",
-    "oak_nest": "https://deno.land/x/oak_nest@v0.5.0/mod.ts",
-    "oak_exception": "https://deno.land/x/oak_exception@v0.0.4/mod.ts"
+    "deno_mongo_schema": "https://deno.land/x/deno_mongo_schema@v0.3.4/mod.ts",
+    "oak_nest": "https://deno.land/x/oak_nest@v0.5.5/mod.ts"
   }
 }

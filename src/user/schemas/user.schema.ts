@@ -1,5 +1,6 @@
-import { Prop, Schema } from "deno_mongo_schema";
+import { Prop, Schema, SchemaDecorator } from "deno_mongo_schema";
 
+@SchemaDecorator()
 export class User extends Schema {
   @Prop({
     required: true,
