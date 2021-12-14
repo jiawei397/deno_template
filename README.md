@@ -28,6 +28,10 @@ deno run -A --importmap import_map.json --unstable mod.ts
 denon dev
 ```
 
+## 锁定依赖
+
+使用`lock.json`来保障依赖，所以当`import_map.json`的内容或版本号修改后，需要执行`denon cache`，再重启服务。
+
 ## 校验
 
 ```shell

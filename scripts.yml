@@ -15,7 +15,7 @@ scripts:
     unstable: true
     importmap: "import_map.json"
     tsconfig: tsconfig.json
-    # lock: lock.json
+    lock: lock.json
   build:
     cmd: deno bundle mod.ts mod.js
     watch: false
