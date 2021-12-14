@@ -17,7 +17,9 @@
         "--config",
         "tsconfig.json",
         "--unstable",
-        "${file}"
+        "--importmap",
+        "import_map.json",
+        "mod.ts"
       ],
       "attachSimplePort": 9229
     }
