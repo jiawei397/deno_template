@@ -1,6 +1,6 @@
 # deno_template
 
-[![deno version](https://img.shields.io/badge/deno-^1.13.2-green?logo=deno)](https://github.com/denoland/deno)
+[![deno version](https://img.shields.io/badge/deno-^1.16.2-green?logo=deno)](https://github.com/denoland/deno)
 
 ## 安装denon
 
