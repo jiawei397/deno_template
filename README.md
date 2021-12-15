@@ -14,7 +14,7 @@ deno install -qAf --unstable https://deno.land/x/denon/denon.ts
 
 在应用商店查找`deno`插件，安装使用。
 
-我们项目启用[`import maps`](https://deno.land/manual@v1.6.0/linking_to_external_code/import_maps)功能，所以安装完插件后，请将`Deno: Import Map`项配置为：`import_map.json`，建议**本工作区**启用，而不是用户（全局）开启。
+本工程默认启用[`import maps`](https://deno.land/manual@v1.6.0/linking_to_external_code/import_maps)功能。
 
 ## 运行
 
