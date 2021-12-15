@@ -1,9 +1,6 @@
 version: 0.2.0
 name: deno_template
 scripts:
-  check:
-    cmd: deno run --allow-read --allow-env https://deno.land/x/jw_cli@v0.2.3/cli/valid_deps.ts
-    watch: false
   dev:
     cmd: "deno run mod.ts"
     desc: run my main.ts file
