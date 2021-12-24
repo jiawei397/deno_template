@@ -1,4 +1,4 @@
-import * as posix from "path/posix.ts";
+import * as posix from "std/path/posix.ts";
 import { OakCookie } from "oak_nest";
 import { Cache, isDist } from "jw_utils";
 import { YamlLoader } from "yaml_loader";

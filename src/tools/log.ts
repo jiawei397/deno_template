@@ -6,6 +6,6 @@ await initLog(globals.log);
 
 export const logger = getLogger();
 
-export const LogTime = (str: string) => {
-  return logTime(str, { logger });
+export const LogTime = () => {
+  return logTime({ logger });
 };

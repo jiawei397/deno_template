@@ -3,9 +3,9 @@ import type { Context } from "oak_nest";
 import { UserService } from "./services/user.service.ts";
 import { AddUserDto, SearchUserDto, UpdateUserDto } from "./dtos/user.dto.ts";
 import { UserParam } from "./user.decorator.ts";
-import { LogTime } from "../tools/log.ts";
 import { SSOGuard } from "../guards/sso.guard.ts";
-import { BadRequestException, SSOUserInfo } from "jw_utils";
+import { SSOUserInfo } from "jw_utils";
+import { BadRequestException } from "oak_exception";
 
 @Controller("/user")
 @UseGuards(SSOGuard)
@@ -13,7 +13,6 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get("info")
-  @LogTime(UserController.name)
   userinfo(@UserParam() user: SSOUserInfo) {
     return user;
   }
