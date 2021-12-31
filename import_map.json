@@ -5,10 +5,10 @@
     "jw_fetch": "https://deno.land/x/jw_fetch@v0.1.6/mod.ts",
     "deno_class_validator": "https://deno.land/x/deno_class_validator@v1.0.0/mod.ts",
     "date_file_log": "https://deno.land/x/date_file_log@v0.1.17/mod.ts",
-    "oak_exception": "https://deno.land/x/oak_exception@v0.0.4/mod.ts",
-    "jw_utils": "https://deno.land/x/jw_utils@v0.4.10/mod.ts",
-    "deno_mongo_schema": "https://deno.land/x/deno_mongo_schema@v0.4.0/mod.ts",
-    "oak_nest": "https://deno.land/x/oak_nest@v0.9.1/mod.ts",
-    "oak_nest/modules/": "https://deno.land/x/oak_nest@v0.9.1/modules/"
+    "oak_exception": "https://deno.land/x/oak_exception@v0.0.7/mod.ts",
+    "jw_utils": "https://deno.land/x/jw_utils@v0.4.11/mod.ts",
+    "deno_mongo_schema": "https://deno.land/x/deno_mongo_schema@v0.6.0/mod.ts",
+    "oak_nest": "https://deno.land/x/oak_nest@v0.10.4/mod.ts",
+    "oak_nest/modules/": "https://deno.land/x/oak_nest@v0.10.4/modules/"
   }
 }
