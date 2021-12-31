@@ -8,7 +8,7 @@
     "oak_exception": "https://deno.land/x/oak_exception@v0.0.7/mod.ts",
     "jw_utils": "https://deno.land/x/jw_utils@v0.4.11/mod.ts",
     "deno_mongo_schema": "https://deno.land/x/deno_mongo_schema@v0.6.0/mod.ts",
-    "oak_nest": "https://deno.land/x/oak_nest@v0.10.4/mod.ts",
+    "oak_nest": "https://deno.land/x/oak_nest@v0.11.0/mod.ts",
     "oak_nest/modules/": "https://deno.land/x/oak_nest@v0.10.4/modules/"
   }
 }
