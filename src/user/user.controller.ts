@@ -4,7 +4,7 @@ import { UserService } from "./services/user.service.ts";
 import { AddUserDto, SearchUserDto, UpdateUserDto } from "./dtos/user.dto.ts";
 import { UserParam } from "./user.decorator.ts";
 import { SSOGuard } from "../guards/sso.guard.ts";
-import { SSOUserInfo } from "jw_utils";
+import { SSOUserInfo } from "utils";
 import { BadRequestException } from "oak_exception";
 
 @Controller("/user")

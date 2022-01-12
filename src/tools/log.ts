@@ -1,5 +1,5 @@
 import { getLogger, initLog } from "date_file_log";
-import { logTime } from "jw_utils";
+import { logTime } from "utils";
 import globals from "../globals.ts";
 
 await initLog(globals.log);

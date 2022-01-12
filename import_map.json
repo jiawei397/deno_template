@@ -1,14 +1,15 @@
 {
   "imports": {
+    "@/": "./src/",
     "std/": "https://deno.land/std@0.117.0/",
     "yaml_loader": "https://deno.land/x/yaml_loader@v0.1.0/mod.ts",
-    "jw_fetch": "https://deno.land/x/jw_fetch@v0.1.6/mod.ts",
+    "jw_fetch": "https://deno.land/x/jw_fetch@v0.2.0/mod.ts",
     "deno_class_validator": "https://deno.land/x/deno_class_validator@v1.0.0/mod.ts",
     "date_file_log": "https://deno.land/x/date_file_log@v0.1.17/mod.ts",
-    "oak_exception": "https://deno.land/x/oak_exception@v0.0.7/mod.ts",
-    "jw_utils": "https://deno.land/x/jw_utils@v0.4.11/mod.ts",
-    "deno_mongo_schema": "https://deno.land/x/deno_mongo_schema@v0.6.0/mod.ts",
-    "oak_nest": "https://deno.land/x/oak_nest@v0.11.0/mod.ts",
-    "oak_nest/modules/": "https://deno.land/x/oak_nest@v0.10.4/modules/"
+    "oak_exception": "https://deno.land/x/oak_exception@v0.0.9/mod.ts",
+    "deno_mongo_schema": "https://deno.land/x/deno_mongo_schema@v0.6.2/mod.ts",
+    "oak_nest": "https://deno.land/x/oak_nest@v1.1.1/mod.ts",
+    "oak_nest/modules/": "https://deno.land/x/oak_nest@v1.1.1/modules/",
+    "utils": "https://deno.land/x/oak_nest@v1.1.1/modules/uinv/mod.ts"
   }
 }

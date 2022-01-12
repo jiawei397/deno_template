@@ -37,12 +37,12 @@ export class UserService {
     });
   }
 
-  update(id: string, data: Partial<User>): Promise<User> {
+  update(id: string, data: Partial<User>) {
     return this.model.findByIdAndUpdate(id, {
       $set: data,
     }, {
       new: true,
-    }) as Promise<User>;
+    });
   }
 
   deleteById(id: string) {

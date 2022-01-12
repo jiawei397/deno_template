@@ -1,6 +1,6 @@
 import * as posix from "std/path/posix.ts";
 import { OakCookie } from "oak_nest";
-import { Cache, isDist } from "jw_utils";
+import { Cache, isDist } from "utils";
 import { YamlLoader } from "yaml_loader";
 
 const yamlLoader = new YamlLoader();
