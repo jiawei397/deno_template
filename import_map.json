@@ -3,13 +3,14 @@
     "@/": "./src/",
     "std/": "https://deno.land/std@0.117.0/",
     "yaml_loader": "https://deno.land/x/yaml_loader@v0.1.0/mod.ts",
-    "jw_fetch": "https://deno.land/x/jw_fetch@v0.2.0/mod.ts",
+    "jw_fetch": "https://deno.land/x/jw_fetch@v0.2.3/mod.ts",
     "deno_class_validator": "https://deno.land/x/deno_class_validator@v1.0.0/mod.ts",
     "date_file_log": "https://deno.land/x/date_file_log@v0.1.17/mod.ts",
     "oak_exception": "https://deno.land/x/oak_exception@v0.0.9/mod.ts",
     "deno_mongo_schema": "https://deno.land/x/deno_mongo_schema@v0.6.6/mod.ts",
-    "oak_nest": "https://deno.land/x/oak_nest@v1.1.3/mod.ts",
-    "oak_nest/modules/": "https://deno.land/x/oak_nest@v1.1.3/modules/",
-    "utils": "https://deno.land/x/oak_nest@v1.1.3/modules/uinv/mod.ts"
+    "oak_nest": "https://deno.land/x/oak_nest@v1.3.1/mod.ts",
+    "oak_nest/modules/": "https://deno.land/x/oak_nest@v1.3.1/modules/",
+    "utils": "https://deno.land/x/oak_nest@v1.3.1/modules/uinv/mod.ts",
+    "lodash": "https://cdn.skypack.dev/pin/lodash@v4.17.21-K6GEbP02mWFnLA45zAmi/mode=imports/optimized/lodash.js"
   }
 }
