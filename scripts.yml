@@ -10,7 +10,7 @@ scripts:
       - write
       - read
     unstable: true
-    importmap: "import_map.json"
+    importMap: "import_map.json"
     tsconfig: tsconfig.json
     lock: lock.json
   build:
@@ -38,6 +38,6 @@ scripts:
     cmd: deno cache --lock-write mod.ts
     watch: false
     unstable: true
-    importmap: "import_map.json"
+    importMap: "import_map.json"
     tsconfig: tsconfig.json
     lock: lock.json

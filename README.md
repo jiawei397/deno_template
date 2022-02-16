@@ -5,7 +5,7 @@
 ## 安装denon
 
 ```
-deno install -qAf --unstable https://deno.land/x/denon/denon.ts
+deno install -qAf --unstable https://deno.land/x/denon@2.5.0/denon.ts
 ```
 
 具体api详见[官方](https://deno.land/x/denon)
