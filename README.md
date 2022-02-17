@@ -1,6 +1,6 @@
 # deno_template
 
-[![deno version](https://img.shields.io/badge/deno-^1.16.2-green?logo=deno)](https://github.com/denoland/deno)
+[![deno version](https://img.shields.io/badge/deno-^1.19.0-green?logo=deno)](https://github.com/denoland/deno)
 
 ## 安装denon
 
@@ -48,7 +48,7 @@ deno fmt
 
 ## 打包
 
-```
+```bash
 deno bundle mod.ts mod.js
 
 deno bundle main.ts | esbuild --minify > main.min.js
@@ -58,13 +58,13 @@ deno compile --unstable mod.ts
 
 或者使用`denon`：
 
-```
+```bash
 denon build
 ```
 
 运行打包后的结果：
 
-```
+```bash
 denon dist
 ```
 
@@ -72,13 +72,13 @@ denon dist
 
 我们通过打标签的方式，跑CICD进行发布，建议安装以下命令：
 
-```ts
-deno install --allow-read --allow-write --allow-run --unstable -n deno_tag -f https://deno.land/x/jw_cli@v0.2.4/cli/tag.ts
+```bash
+deno install --allow-read --allow-write --allow-run --unstable -n deno_tag -f https://deno.land/x/jw_cli@v0.2.7/cli/tag/mod.ts
 ```
 
 然后在项目根目录下执行`patch/minor/major`进行版本号的变更，逻辑与`nodejs`的`npm version`命令一致，它会更新`scripts.yml`文件中版本号。
 
-```
+```bash
 deno_tag patch -L
 deno_tag minor -L
 deno_tag major -L
