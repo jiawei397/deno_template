@@ -33,7 +33,7 @@ install_deps:
 
 # build:
 #   stage: build
-#   image: denoland/deno:alpine-1.14.1
+#   <<: *imageDef
 #   script:
 #     - deno bundle --unstable mod.ts mod.js
 #   cache:
