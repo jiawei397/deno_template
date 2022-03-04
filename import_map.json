@@ -7,10 +7,10 @@
     "deno_class_validator": "https://deno.land/x/deno_class_validator@v1.0.0/mod.ts",
     "date_file_log": "https://deno.land/x/date_file_log@v0.1.17/mod.ts",
     "oak_exception": "https://deno.land/x/oak_exception@v0.0.9/mod.ts",
-    "deno_mongo_schema": "https://deno.land/x/deno_mongo_schema@v0.8.0/mod.ts",
-    "oak_nest": "https://deno.land/x/oak_nest@v1.5.0/mod.ts",
-    "oak_nest/modules/": "https://deno.land/x/oak_nest@v1.5.0/modules/",
-    "utils": "https://deno.land/x/oak_nest@v1.5.0/modules/uinv/mod.ts",
+    "deno_mongo_schema": "https://deno.land/x/deno_mongo_schema@v0.8.2/mod.ts",
+    "oak_nest": "https://deno.land/x/oak_nest@v1.7.1/mod.ts",
+    "oak_nest/modules/": "https://deno.land/x/oak_nest@v1.7.1/modules/",
+    "utils": "https://deno.land/x/oak_nest@v1.7.1/modules/uinv/mod.ts",
     "lodash": "https://deno.land/x/lodash_es@v0.0.2/mod.ts",
     "kafka": "https://deno.land/x/kafkasaur@v0.0.7/index.ts"
   }
