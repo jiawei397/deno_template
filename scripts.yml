@@ -41,3 +41,6 @@ scripts:
     importMap: "import_map.json"
     tsconfig: tsconfig.json
     lock: lock.json
+  log: 
+    cmd: conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+    watch: false    

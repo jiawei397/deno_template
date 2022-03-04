@@ -103,3 +103,23 @@ deno_tag patch -L
 deno_tag minor -L
 deno_tag major -L
 ```
+
+## 生成git日志文件
+
+```
+npm install -g conventional-changelog-cli
+cd my-project
+conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+```
+
+如果只是添加：
+
+```
+conventional-changelog -p angular -i CHANGELOG.md -s
+```
+
+安装后，以后推荐在本工程执行：
+
+```
+denon log
+```
