@@ -7,7 +7,7 @@ stages:
 
 # deno镜像模板
 .deno_image: &imageDef
-  image: denoland/deno:alpine-1.19.0
+  image: denoland/deno:alpine-1.20.6
 
 lint:
   stage: lint
@@ -24,6 +24,7 @@ install_deps:
     DENO_DIR: deno-dir
   only:
     - master  
+    - tags
   script:
     - deno cache --lock lock.json --importmap import_map.json --config tsconfig.json --unstable mod.ts
   cache:
