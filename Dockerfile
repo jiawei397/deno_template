@@ -1,4 +1,4 @@
-FROM denoland/deno:alpine-1.20.6
+FROM denoland/deno:alpine-1.24.0
 
 EXPOSE 3000
 
@@ -12,6 +12,6 @@ ADD . .
 
 ENV DENO_DIR=deno-dir
 
-RUN deno cache --import-map import_map.json --config tsconfig.json --unstable mod.ts
+RUN deno cache --import-map import_map_proxy.json --unstable mod.ts
 
-CMD deno run --allow-net --allow-env --allow-write --allow-read --importmap import_map.json --config tsconfig.json --unstable mod.ts
+CMD deno run --allow-net --allow-env --allow-write --allow-read --importmap import_map_proxy.json --unstable mod.ts

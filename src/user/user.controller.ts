@@ -2,9 +2,9 @@ import { Body, Controller, Get, Post, Query, UseGuards } from "oak_nest";
 import type { Context } from "oak_nest";
 import { UserService } from "./services/user.service.ts";
 import { AddUserDto, SearchUserDto, UpdateUserDto } from "./dtos/user.dto.ts";
-import { UserParam } from "./user.decorator.ts";
+import { UserParam } from "utils";
 import { SSOGuard } from "../guards/sso.guard.ts";
-import { SSOUserInfo } from "utils";
+import type { SSOUserInfo } from "utils";
 import { BadRequestException } from "oak_exception";
 
 @Controller("/user")

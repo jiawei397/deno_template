@@ -1,4 +1,4 @@
-version: 0.5.3
+version: 0.6.0
 name: deno_template
 scripts:
   dev:
@@ -11,7 +11,6 @@ scripts:
       - read
     unstable: true
     importMap: "import_map.json"
-    tsconfig: tsconfig.json
     lock: lock.json
   build:
     cmd: deno bundle mod.ts mod.js
@@ -30,7 +29,6 @@ scripts:
     unstable: true
     log: info
     watch: false
-    tsconfig: tsconfig.json
     env:
       NODE_ENV: production
       PORT: '2000'
@@ -39,8 +37,16 @@ scripts:
     watch: false
     unstable: true
     importMap: "import_map.json"
-    tsconfig: tsconfig.json
     lock: lock.json
   log: 
     cmd: conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     watch: false    
+  map:
+    cmd: deno run --allow-read --allow-write https://deno-mirror.uino.cn/https/deno.land/x/deno_proxy@v0.0.3/cli/mod.ts --baseUrl https://deno-mirror.uino.cn --oldPath import_map.json --newPath import_map_proxy.json  
+    watch: false   
+  cacheProxy: 
+    cmd: deno cache --lock-write mod.ts
+    watch: false
+    unstable: true
+    importMap: "import_map_proxy.json"
+    lock: lock.json    

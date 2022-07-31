@@ -1,11 +1,11 @@
-import { Prop, BaseSchema, Schema } from "deno_mongo_schema";
+import { BaseSchema, Prop, Schema } from "deno_mongo_schema";
 
 @Schema()
 export class User extends BaseSchema {
   @Prop({
     required: true,
   })
-  email!: string;
+  email: string;
 
   @Prop({
     required: true,
@@ -13,7 +13,7 @@ export class User extends BaseSchema {
     // sparse: true,
     // unique: true,
   })
-  username!: string;
+  username: string;
 }
 
 export type UserKey = keyof User;

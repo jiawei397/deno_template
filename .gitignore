@@ -6,3 +6,4 @@
 *.map
 .deno_plugins
 /logs/
+import_map_proxy.json

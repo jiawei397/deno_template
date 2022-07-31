@@ -14,8 +14,6 @@
         "run",
         "--inspect-brk",
         "-A",
-        "--config",
-        "tsconfig.json",
         "--unstable",
         "--importmap",
         "import_map.json",

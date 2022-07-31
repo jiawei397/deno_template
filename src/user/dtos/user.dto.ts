@@ -2,24 +2,24 @@ import { IsString } from "deno_class_validator";
 
 export class AddUserDto {
   @IsString()
-  username!: string;
+  username: string;
 
   @IsString()
-  email!: string;
+  email: string;
 }
 
 export class UpdateUserDto {
   @IsString()
-  username!: string;
+  username: string;
 
   @IsString()
-  email!: string;
+  email: string;
 
   @IsString()
-  id!: string;
+  id: string;
 }
 
 export class SearchUserDto {
   @IsString()
-  username!: string;
+  username: string;
 }
