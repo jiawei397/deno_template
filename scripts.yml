@@ -2,22 +2,27 @@ version: 0.6.0
 name: deno_template
 scripts:
   dev:
-    cmd: "deno run mod.ts"
-    desc: run my main.ts file
+    cmd: "denon map && deno run mod.ts"
     allow:
       - net
       - env
       - write
       - read
     unstable: true
-    importMap: "import_map.json"
+    # env:
+    #   DEBUG: 'true'
+    importMap: "import_map_proxy.json"
     lock: lock.json
   build:
     cmd: deno bundle mod.ts mod.js
     watch: false
     unstable: true
-    env:
-      NODE_ENV: production
+    importMap: "import_map_proxy.json"
+  compile:
+    cmd: deno compile mod.ts
+    watch: false
+    unstable: true
+    importMap: "import_map_proxy.json"
   dist:
     cmd: deno run mod.js
     desc: run dist server
@@ -36,17 +41,29 @@ scripts:
     cmd: deno cache --lock-write mod.ts
     watch: false
     unstable: true
-    importMap: "import_map.json"
+    importMap: "import_map_proxy.json"
     lock: lock.json
-  log: 
-    cmd: conventional-changelog -p angular -i CHANGELOG.md -s -r 0
-    watch: false    
-  map:
-    cmd: deno run --allow-read --allow-write https://deno-mirror.uino.cn/https/deno.land/x/deno_proxy@v0.0.3/cli/mod.ts --baseUrl https://deno-mirror.uino.cn --oldPath import_map.json --newPath import_map_proxy.json  
-    watch: false   
-  cacheProxy: 
-    cmd: deno cache --lock-write mod.ts
+  test: 
+    cmd: deno test
+    allow:
+      - net
+      - env
+      - write
+      - read
     watch: false
     unstable: true
     importMap: "import_map_proxy.json"
-    lock: lock.json    
+  pm2: 
+    cmd: pm2 start --name deno_wiki app.sh
+    watch: false
+  publish: 
+    cmd: deno_tag -L
+    watch: false
+  log: 
+    cmd: conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+    watch: false  
+  map:
+    cmd: deno run --allow-read --allow-write https://deno-mirror.uino.cn/https/deno.land/x/deno_proxy@v0.0.3/cli/mod.ts --baseUrl https://deno-mirror.uino.cn --oldPath import_map.json --newPath import_map_proxy.json  
+    watch: false  
+watcher:
+  exts: ["js", "jsx", "ts", "tsx"]    
