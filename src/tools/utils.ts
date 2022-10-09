@@ -1,26 +1,15 @@
 import * as posix from "std/path/posix.ts";
 import { OakCookie } from "oak_nest";
-import { Cache, isDist } from "utils";
+import { isDist } from "utils";
 import { YamlLoader } from "yaml_loader";
 
-const yamlLoader = new YamlLoader();
-
-const yamlPageCache = new Cache(5 * 60 * 1000);
-
-export async function readYaml<T>(
-  path: string,
-): Promise<T> {
-  const cache = yamlPageCache.get(path);
-  if (cache) {
-    console.debug(`read yaml [${path}] from cache`);
-    return cache;
-  }
+export async function readYaml<T>(path: string): Promise<T> {
   let allPath = path;
   if (!/\.(yaml|yml)$/.test(path)) {
     allPath += ".yaml";
   }
+  const yamlLoader = new YamlLoader();
   const data = await yamlLoader.parseFile(allPath);
-  yamlPageCache.set(path, data);
   return data as T;
 }
 
