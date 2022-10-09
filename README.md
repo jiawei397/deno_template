@@ -1,6 +1,6 @@
 # deno_template
 
-[![deno version](https://img.shields.io/badge/deno-^1.24.0-green?logo=deno)](https://github.com/denoland/deno)
+[![deno version](https://img.shields.io/badge/deno-^1.26.1-green?logo=deno)](https://github.com/denoland/deno)
 
 ## 安装插件
 
@@ -46,28 +46,6 @@ deno fmt
 
 建议开发时，开启`vscode`自动格式化。
 
-## 打包
-
-```
-deno bundle mod.ts mod.js
-
-deno bundle main.ts | esbuild --minify > main.min.js
-
-deno compile --unstable mod.ts
-```
-
-或者使用`denon`：
-
-```
-denon build
-```
-
-运行打包后的结果：
-
-```
-denon dist
-```
-
 ## 发布到gitlab
 
 我们通过打标签的方式，跑CICD进行发布，建议安装以下命令：
@@ -96,3 +74,5 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 conventional-changelog -p angular -i CHANGELOG.md -s
 ```
+
+现使用`deno task log`来调用上述命令。
