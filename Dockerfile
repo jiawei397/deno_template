@@ -1,4 +1,4 @@
-FROM denoland/deno:alpine-1.26.1
+FROM dk.uion.cn/deno/deno:alpine-1.26.1
 
 EXPOSE 3000
 
