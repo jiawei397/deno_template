@@ -4,13 +4,7 @@
 
 ## 安装插件
 
-```
-deno install -qAf --unstable https://deno.land/x/denon/denon.ts
-```
-
-具体api详见[官方](https://deno.land/x/denon)
-
-再在当前工程执行：
+在当前工程执行：
 
 ```
 deno run  --allow-write https://deno.land/x/jw_cli@v0.3.0/cli/git_hook.ts
@@ -23,13 +17,13 @@ deno run  --allow-write https://deno.land/x/jw_cli@v0.3.0/cli/git_hook.ts
 ## 运行
 
 ```
-denon dev
+deno task dev
 ```
 
 ## 锁定依赖
 
 ```
-denon cache
+deno task cache
 ```
 
 ## 校验
@@ -54,7 +48,7 @@ deno fmt
 deno install --allow-read --allow-write --allow-run --unstable -n deno_tag -f https://deno.land/x/jw_cli@v0.3.0/cli/tag/mod.ts
 ```
 
-然后在项目根目录下执行`patch/minor/major`进行版本号的变更，逻辑与`nodejs`的`npm version`命令一致，它会更新`scripts.yml`文件中版本号。
+然后在项目根目录下执行`patch/minor/major`进行版本号的变更，逻辑与`nodejs`的`npm version`命令一致，它会更新`deno.jsonc`文件中版本号。
 
 ```
 deno_tag patch -L

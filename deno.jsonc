@@ -1,4 +1,6 @@
 {
+  "name": "deno_template",
+  "version": "0.6.1",
   "compilerOptions": {
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -16,6 +18,6 @@
     "build": "deno bundle --import-map import_map_proxy.json --unstable mod.ts mod.js", // build之后代码无法运行成功，原因是代码顺序问题
     "dist": "deno run --allow-net --allow-env --allow-write --allow-read --import-map import_map_proxy.json --unstable mod.js",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "pm2": "pm2 start --name deno_template mod.ts --interpreter='deno' --interpreter-args='run --allow-net --allow-env --allow-write --allow-read --importmap import_map_proxy.json --unstable'"
+    "pm2": "pm2 start --name deno_template mod.ts --interpreter='deno' --interpreter-args='run --allow-net --allow-env --allow-write --allow-read --importmap import_map_proxy.json --unstable'" // 运行时修改这里的name
   }
 }
