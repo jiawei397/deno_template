@@ -1,7 +1,5 @@
 stages:
   - lint
-  - install_deps
-  # - build
   - docker
   - deploy
 
@@ -16,37 +14,7 @@ lint:
     - deno lint
   cache: {}  
 
-# 安装依赖
-install_deps:
-  stage: install_deps
-  <<: *imageDef
-  variables:
-    DENO_DIR: deno-dir
-  only:
-    - master  
-    - tags
-  script:
-    - deno run --allow-read --allow-write https://deno-mirror.uino.cn/https/deno.land/x/deno_proxy@v0.0.3/cli/mod.ts --baseUrl https://deno-mirror.uino.cn --oldPath import_map.json --newPath import_map_proxy.json  
-    - deno cache --unstable --importmap import_map_proxy.json mod.ts
-    # - deno cache --lock lock.json --unstable --importmap import_map.json mod.ts
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-      - deno-dir
-      - import_map_proxy.json
-
-# build:
-#   stage: build
-#   <<: *imageDef
-#   script:
-#     - deno bundle --unstable mod.ts mod.js
-#   cache:
-#     key: ${CI_COMMIT_REF_SLUG}
-#     paths:
-#       - /deno-dir/deps
-#       - mod.js
-
-docker:
+.docker:
   stage: docker
   variables:
     CI_DOCKERFILE: Dockerfile
@@ -54,47 +22,29 @@ docker:
     CI_DOCKER_REPO: xxx-server
   only:
     - tags
-    - master
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    policy: pull
-    paths:
-      - ./deno-dir
+    - main
   script:
     - docker_build
 
-# deploy:
-#   stage: deploy
-#   variables:
-#     CI_DOCKER_PROJECT: spacex
-#     CI_DOCKER_REPO: cdn-web
-#     CI_UPGRADE_HOSTNAME: cdn-file.uino.cn
-#     CI_UPGRADE_STRICT: minor
-#   cache: {}
-#   retry:
-#     max: 2
-#     when:
-#       - runner_system_failure
-#       - stuck_or_timeout_failure
-#   only:
-#     - tags
-#   script:
-#     - docker_deploy
-
-deploy-local:
+.deploy:
   stage: deploy
   variables:
-    CI_DOCKER_PROJECT: kiss
-    CI_DOCKER_REPO: xx-server
-    CI_UPGRADE_HOSTNAME: xx.spacex.uino.local
-    CI_UPGRADE_STRICT: minor
+    CI_DOCKER_PROJECT: xx
+    CI_DOCKER_REPO: xx
+    CI_UPGRADE_HOSTNAME: xx.xx
   cache: {}
-  retry:
-    max: 2
-    when:
-      - runner_system_failure
-      - stuck_or_timeout_failure
   only:
-    - master
+    - tags
   script:
-    - docker_deploy_local
+    - docker_deploy
+
+.deploy-local:
+  stage: deploy
+  variables:
+    CI_DOCKER_PROJECT: xx
+    CI_DOCKER_REPO: xx-server
+  cache: {}
+  only:
+    - main
+  script:
+    - docker_deploy local
