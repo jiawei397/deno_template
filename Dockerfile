@@ -12,6 +12,6 @@ ADD . .
 
 ENV DENO_DIR=deno-dir
 
-RUN deno cache --import-map import_map_proxy.json --unstable mod.ts
+RUN deno task map && deno cache --import-map import_map_proxy.json --unstable mod.ts
 
 CMD deno run --allow-net --allow-env --allow-write --allow-read --importmap import_map_proxy.json --unstable mod.ts
