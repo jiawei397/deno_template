@@ -7,7 +7,7 @@
 在当前工程执行：
 
 ```
-deno run  --allow-write https://deno.land/x/jw_cli@v0.3.0/cli/git_hook.ts
+deno run  --allow-write https://deno.land/x/jw_cli@v0.5.0/cli/git_hook.ts
 ```
 
 ## vscode开启deno插件
@@ -45,7 +45,7 @@ deno fmt
 我们通过打标签的方式，跑CICD进行发布，建议安装以下命令：
 
 ```ts
-deno install --allow-read --allow-write --allow-run --unstable -n deno_tag -f https://deno.land/x/jw_cli@v0.3.0/cli/tag/mod.ts
+deno install --allow-read --allow-write --allow-run --unstable -n deno_tag -f https://deno.land/x/jw_cli@v0.5.0/cli/tag/mod.ts
 ```
 
 然后在项目根目录下执行`patch/minor/major`进行版本号的变更，逻辑与`nodejs`的`npm version`命令一致，它会更新`deno.jsonc`文件中版本号。
