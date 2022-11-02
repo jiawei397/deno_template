@@ -1,12 +1,13 @@
 import { Controller, Get } from "oak_nest";
-import { readYaml } from "./tools/utils.ts";
 import { Scripts } from "./type.ts";
+import { parse } from "jsonc";
 
 @Controller("")
 export class AppController {
   @Get("/")
   async version() {
-    const scriptsConfig = await readYaml<Scripts>("scripts.yml");
-    return `<html><h2>${scriptsConfig.version}</h2></html>`;
+    const text = await Deno.readTextFile("deno.jsonc");
+    const json: Scripts = parse(text);
+    return `<html><h2>${json.version}</h2></html>`;
   }
 }

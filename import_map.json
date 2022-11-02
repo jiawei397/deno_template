@@ -10,6 +10,7 @@
     "oak_nest": "https://deno.land/x/oak_nest@v1.13.8/mod.ts",
     "oak_nest/modules/": "https://deno.land/x/oak_nest@v1.13.8/modules/",
     "utils": "https://deno.land/x/oak_nest@v1.13.8/modules/uinv/mod.ts",
-    "lodash": "https://deno.land/x/lodash_es@v0.0.2/mod.ts"
+    "lodash": "https://deno.land/x/lodash_es@v0.0.2/mod.ts",
+    "jsonc": "https://deno.land/x/jsonc@1/main.ts"
   }
 }
