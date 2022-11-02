@@ -1,6 +1,6 @@
 {
   "name": "deno_template",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "compilerOptions": {
     "removeComments": true,
     "emitDecoratorMetadata": true,
