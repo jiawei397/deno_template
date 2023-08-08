@@ -42,30 +42,30 @@ deno fmt
 
 ## 发布到gitlab
 
-我们通过打标签的方式，跑CICD进行发布，建议安装以下命令：
+我们通过打标签的方式，跑CI/CD进行发布，建议安装以下命令：
 
-```ts
-deno install --allow-read --allow-write --allow-run --unstable -n deno_tag -f https://deno.land/x/jw_cli@v0.5.0/cli/tag/mod.ts
+```bash
+deno install --allow-read --allow-write --allow-run --unstable -n tag -f https://deno.land/x/jw_cli@v0.5.0/cli/tag/mod.ts
 ```
 
-然后在项目根目录下执行`patch/minor/major`进行版本号的变更，逻辑与`nodejs`的`npm version`命令一致，它会更新`deno.jsonc`文件中版本号。
+然后在项目根目录下执行`patch/minor/major`进行版本号的变更，逻辑与`Node.js`的`npm version`命令一致，它会更新`deno.jsonc`文件中版本号。
 
-```
-deno_tag patch -L
-deno_tag minor -L
-deno_tag major -L
+```bash
+tag patch -L
+tag minor -L
+tag major -L
 ```
 
 ## 生成git日志文件
 
-```
+```bash
 npm install -g conventional-changelog-cli
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
 如果只是添加：
 
-```
+```bash
 conventional-changelog -p angular -i CHANGELOG.md -s
 ```
 
