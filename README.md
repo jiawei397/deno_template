@@ -6,7 +6,7 @@
 
 在当前工程执行：
 
-```
+```bash
 deno run  --allow-write https://deno.land/x/jw_cli@v0.5.0/cli/git_hook.ts
 ```
 
@@ -16,13 +16,13 @@ deno run  --allow-write https://deno.land/x/jw_cli@v0.5.0/cli/git_hook.ts
 
 ## 运行
 
-```
+```bash
 deno task dev
 ```
 
 ## 锁定依赖
 
-```
+```bash
 deno task cache
 ```
 

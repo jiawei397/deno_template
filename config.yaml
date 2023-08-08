@@ -1,6 +1,6 @@
 port: 3000
 apiPrefix: api
-db: 'mongodb://admin:123456@192.168.21.125:30711/test?authSource=admin'
+db: 'mongodb://10.100.30.65:27018/test'
 ssoApi: "https://sso.3dlink.cn/api/"
 log:
   appenders:
