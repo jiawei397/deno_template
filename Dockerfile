@@ -1,4 +1,4 @@
-FROM dk.uion.cn/deno/deno:alpine-1.26.1
+FROM dk.uino.cn/library/denoland-deno:alpine-1.33.1
 
 EXPOSE 3000
 
@@ -8,10 +8,13 @@ WORKDIR /app
 RUN chown -R deno /app
 RUN chmod 755 /app
 
-ADD . .
+USER deno
+
+COPY . .
 
 ENV DENO_DIR=deno-dir
+ENV DENO_ENV=production
+ENV NPM_CONFIG_REGISTRY=https://registry.npmmirror.com
+RUN deno task map:ci && deno task cache
 
-RUN deno task map && deno cache --import-map import_map_proxy.json --unstable mod.ts
-
-CMD deno run --allow-net --allow-env --allow-write --allow-read --importmap import_map_proxy.json --unstable mod.ts
+CMD deno run --allow-sys --allow-net --allow-env --allow-write --allow-read  --unstable mod.ts

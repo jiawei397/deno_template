@@ -9,16 +9,15 @@
     "noImplicitThis": false
   },
   "tasks": {
-    "dev": "deno task map && deno task start:dev",
-    "start": "deno run --allow-net --allow-env --allow-write --allow-read --importmap import_map_proxy.json --unstable mod.ts",
-    "start:dev": "deno run --allow-net --allow-env --allow-write --allow-read --importmap import_map_proxy.json --unstable --watch mod.ts",
-    "map": "deno run --allow-read --allow-write https://deno-mirror.uino.cn/https/deno.land/x/deno_proxy@v0.0.3/cli/mod.ts --baseUrl https://deno-mirror.uino.cn --oldPath import_map.json --newPath import_map_proxy.json",
-    "cache": "deno cache --import-map import_map_proxy.json --lock lock.json --unstable --lock-write mod.ts",
-    "test": "deno test --allow-net --allow-env --allow-write --allow-read --import-map import_map_proxy.json --unstable",
-    "compile": "deno compile --allow-net --allow-env --allow-write --allow-read --import-map import_map_proxy.json --unstable mod.ts", // 目前还有问题，主要是上面装饰器部分特性
-    "build": "deno bundle --import-map import_map_proxy.json --unstable mod.ts mod.js", // build之后代码无法运行成功，原因是代码顺序问题
-    "dist": "deno run --allow-net --allow-env --allow-write --allow-read --import-map import_map_proxy.json --unstable mod.js",
+    "dev": "deno task start:dev",
+    "start": "deno run --allow-net --allow-env --allow-write --allow-read --unstable mod.ts",
+    "start:dev": "deno run --allow-net --allow-env --allow-write --allow-read --unstable --watch mod.ts",
+    "map:ci": "deno run --allow-read --allow-write http://app-svc.deno.svc.cluster.local/https/deno.land/x/deno_proxy@v1.4.1/cli/mod.ts --baseUrl http://app-svc.deno.svc.cluster.local --oldPath import_map.json --newPath import_map.json",
+    "cache": "deno cache --unstable mod.ts",
+    "test": "deno task map:ci; deno task test",
+    "unit": "deno test --allow-net --allow-env --allow-write --allow-read --unstable",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "pm2": "pm2 start --name deno_template mod.ts --interpreter='deno' --interpreter-args='run --allow-net --allow-env --allow-write --allow-read --importmap import_map_proxy.json --unstable'" // 运行时修改这里的name
-  }
+    "pm2": "pm2 start --name deno_template mod.ts --interpreter='deno' --interpreter-args='run --allow-net --allow-env --allow-write --allow-read --unstable'" // 运行时修改这里的name
+  },
+  "importMap": "import_map.json"
 }

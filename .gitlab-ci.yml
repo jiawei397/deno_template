@@ -1,50 +1,12 @@
-stages:
-  - lint
-  - docker
-  - deploy
+include:
+  - project: "spacex/ci-templates"
+    file: "deno.gitlab-ci.yml"
+    # ref: "dev"
 
-# deno镜像模板
-.deno_image: &imageDef
-  image: dk.uino.cn/deno/deno:alpine-1.26.1
-
-lint:
-  stage: lint
-  <<: *imageDef
-  script:
-    - deno lint
-  cache: {}  
-
-.docker:
-  stage: docker
-  variables:
-    CI_DOCKERFILE: Dockerfile
-    CI_DOCKER_PROJECT: xx
-    CI_DOCKER_REPO: xxx-server
-  only:
-    - tags
-    - main
-  script:
-    - docker_build
-
-.deploy:
-  stage: deploy
-  variables:
-    CI_DOCKER_PROJECT: xx
-    CI_DOCKER_REPO: xx
-    CI_UPGRADE_HOSTNAME: xx.xx
-  cache: {}
-  only:
-    - tags
-  script:
-    - docker_deploy
-
-.deploy-local:
-  stage: deploy
-  variables:
-    CI_DOCKER_PROJECT: xx
-    CI_DOCKER_REPO: xx-server
-  cache: {}
-  only:
-    - main
-  script:
-    - docker_deploy local
+variables:
+  CI_DOCKER_PROJECT: xx
+  CI_DOCKER_REPO: xx-server    
+  CI_UPGRADE_HOSTNAME: xx.com
+# CI_STATIC_SCAN: "true" # 开启静态文件扫描
+  CI_ENABLE_TEST: "true" # 开启单元测试
+  CI_ENABLE_MANUAL_UPGRADE: "true" # 开启手动升级

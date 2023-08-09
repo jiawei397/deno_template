@@ -3,7 +3,7 @@
   "deno.lint": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "denoland.vscode-deno",
-  "deno.importMap": "import_map_proxy.json",
+  "deno.importMap": "import_map.json",
   "deno.config": "deno.jsonc",
   "deno.suggest.autoImports": true,
   "deno.codeLens.test": true,
@@ -12,7 +12,7 @@
     "--no-check",
     "--allow-all",
     "--import-map",
-    "import_map_proxy.json"
+    "import_map.json"
   ],
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
