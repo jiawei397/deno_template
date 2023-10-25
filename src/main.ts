@@ -1,27 +1,21 @@
+import { NestFactory } from "@nest";
+import { HonoRouter as Router } from "@nest/hono";
+import { anyExceptionFilter } from "@nest/uinv";
 import { AppModule } from "./app.module.ts";
 import { logger } from "./tools/log.ts";
-import { NestFactory } from "oak_nest";
-import globals from "./globals.ts";
-import { anyExceptionFilter } from "oak_exception";
+import globals, { version } from "./globals.ts";
 
-const app = await NestFactory.create(AppModule);
-
-// must before router
-app.use(anyExceptionFilter({
-  logger,
-  isHeaderResponseTime: false,
-}));
-
-app.get("/healthz", (ctx) => {
-  ctx.response.body = "ok";
-});
-
+const app = await NestFactory.create(AppModule, Router);
 app.setGlobalPrefix(globals.apiPrefix);
 
-app.use(app.routes());
+app.useGlobalFilters(anyExceptionFilter({
+  logger,
+}));
 
-const port = Number(Deno.env.get("PORT") || globals.port);
-logger.info(`app start with: http://localhost:${port}`);
+app.get("/healthz", (_req, res) => {
+  res.status = 204;
+});
+
 addEventListener("unhandledrejection", (evt) => {
   evt.preventDefault();
   logger.error(`unhandledrejection`, evt.reason);
@@ -31,4 +25,12 @@ addEventListener("error", (evt) => {
   evt.preventDefault(); // 这句很重要
   logger.error(`global error`, evt.error);
 });
-await app.listen({ port });
+
+await app.listen({
+  port: globals.port,
+  onListen: ({ hostname, port }) => {
+    logger.info(
+      `app start with version ${version}: http://${hostname}:${port}`,
+    );
+  },
+});

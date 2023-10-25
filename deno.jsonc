@@ -1,6 +1,6 @@
 {
   "name": "deno_template",
-  "version": "0.7.2",
+  "version": "1.0.0",
   "lock": false,
   "compilerOptions": {
     "removeComments": true,
@@ -9,12 +9,10 @@
     "noImplicitThis": false
   },
   "tasks": {
-    "dev": "deno task start:dev",
-    "start": "deno run --allow-net --allow-env --allow-write --allow-read --unstable mod.ts",
-    "start:dev": "deno run --allow-net --allow-env --allow-write --allow-read --unstable --watch mod.ts",
-    "map:ci": "deno run --allow-read --allow-write http://app-svc.deno.svc.cluster.local/https/deno.land/x/deno_proxy@v1.4.1/cli/mod.ts --baseUrl http://app-svc.deno.svc.cluster.local --oldPath import_map.json --newPath import_map.json",
-    "cache": "deno cache --unstable mod.ts",
-    "test": "deno task map:ci; deno task test",
+    "dev": "deno task dev:start",
+    "dev:start": "deno run -A --unstable --watch mod.ts",
+    "start": "deno run --allow-sys --allow-net --allow-env --allow-write --allow-read --unstable mod.ts",
+    "test": "deno task test",
     "unit": "deno test --allow-net --allow-env --allow-write --allow-read --unstable",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "pm2": "pm2 start --name deno_template mod.ts --interpreter='deno' --interpreter-args='run --allow-net --allow-env --allow-write --allow-read --unstable'" // 运行时修改这里的name

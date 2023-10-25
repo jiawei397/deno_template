@@ -1,4 +1,4 @@
-import { IsString } from "deno_class_validator";
+import { IsString } from "class_validator";
 
 export class AddUserDto {
   @IsString()

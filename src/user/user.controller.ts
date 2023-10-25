@@ -1,11 +1,17 @@
-import { Body, Controller, Get, Post, Query, UseGuards } from "oak_nest";
-import type { Context } from "oak_nest";
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Form,
+  Get,
+  Post,
+  Query,
+  UseGuards,
+} from "@nest";
+import { type SSOUserInfo, UserParam } from "@nest/uinv";
 import { UserService } from "./services/user.service.ts";
 import { AddUserDto, SearchUserDto, UpdateUserDto } from "./dtos/user.dto.ts";
-import { UserParam } from "utils";
 import { SSOGuard } from "../guards/sso.guard.ts";
-import type { SSOUserInfo } from "utils";
-import { BadRequestException } from "oak_exception";
 
 @Controller("/user")
 @UseGuards(SSOGuard)
@@ -59,12 +65,9 @@ export class UserController {
   }
 
   @Post("upload")
-  async upload(ctx: Context) {
-    const data = ctx.request.body({
-      type: "form-data",
-    });
-    const result = await data.value.read();
-    console.log("---upload----", result);
-    ctx.response.body = "upload ok";
+  // deno-lint-ignore no-explicit-any
+  upload(@Form() form: any) {
+    console.log("---upload----", form);
+    return "upload ok";
   }
 }

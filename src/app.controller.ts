@@ -1,6 +1,6 @@
-import { Controller, Get } from "oak_nest";
+import { Controller, Get } from "@nest";
 import { Scripts } from "./type.ts";
-import { parse } from "jsonc";
+import { parse } from "std/jsonc/mod.ts";
 
 @Controller("")
 export class AppController {

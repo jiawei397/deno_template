@@ -1,6 +1,6 @@
 # deno_template
 
-[![deno version](https://img.shields.io/badge/deno-^1.34.3-green?logo=deno)](https://github.com/denoland/deno)
+[![deno version](https://img.shields.io/badge/deno-^1.37.0-green?logo=deno)](https://github.com/denoland/deno)
 
 ## 安装插件
 
@@ -18,12 +18,6 @@ deno run  --allow-write https://deno.land/x/jw_cli@v0.5.0/cli/git_hook.ts
 
 ```bash
 deno task dev
-```
-
-## 锁定依赖
-
-```bash
-deno task cache
 ```
 
 ## 校验

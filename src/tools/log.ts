@@ -1,10 +1,10 @@
 // deno-lint-ignore-file no-explicit-any
+import { type Constructor, Inject, Injectable, INQUIRER, Scope } from "@nest";
+import { logTime } from "@nest/uinv";
 import { getLogger, initLog } from "date_file_log";
-import { logTime } from "utils";
 import globals from "../globals.ts";
-import { Injectable, Reflect } from "oak_nest";
 
-await initLog(globals.log);
+initLog(globals.log);
 
 export const logger = getLogger();
 
@@ -13,26 +13,21 @@ export const LogTime = () => {
 };
 
 @Injectable({
-  singleton: false,
+  scope: Scope.TRANSIENT,
 })
 export class Logger {
-  constructor() {
-    this.debug = this.debug.bind(this);
-    this.info = this.info.bind(this);
-    this.warn = this.warn.bind(this);
-    this.error = this.error.bind(this);
-  }
-  get pre() {
-    const parent = Reflect.getMetadata("meta:container", this);
-    return parent?.name;
+  private parentName?: string;
+
+  constructor(@Inject(INQUIRER) private parentClass: Constructor) {
+    this.parentName = this.parentClass.name;
   }
 
-  protected write(
+  private write(
     methodName: "warning" | "info" | "debug" | "error",
     ...messages: any[]
   ): void {
-    if (this?.pre) {
-      logger[methodName](this.pre, ...messages);
+    if (this.parentName) {
+      logger[methodName](this.parentName, ...messages);
     } else {
       const [first, ...others] = messages;
       logger[methodName](first, ...others);

@@ -1,4 +1,4 @@
-FROM dk.uino.cn/library/denoland-deno:alpine-1.33.1
+FROM dk.uino.cn/library/denoland-deno:alpine-1.37.0
 
 EXPOSE 3000
 
@@ -12,9 +12,10 @@ USER deno
 
 COPY . .
 
-ENV DENO_DIR=deno-dir
+# ENV DENO_DIR=deno-dir
 ENV DENO_ENV=production
 ENV NPM_CONFIG_REGISTRY=https://registry.npmmirror.com
-RUN deno task map:ci && deno task cache
+ENV NO_COLOR=true
+RUN deno cache --vendor --unstable mod.ts
 
-CMD deno run --allow-sys --allow-net --allow-env --allow-write --allow-read  --unstable mod.ts
+CMD deno run --allow-sys --allow-net --allow-env --allow-write --allow-read  --unstable --vendor mod.ts
