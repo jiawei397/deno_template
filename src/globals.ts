@@ -6,7 +6,7 @@ const config = await readYaml<Config>("config.yaml");
 
 async function getVersion(): Promise<string> {
   const text = await Deno.readTextFile("deno.jsonc");
-  const json: Scripts = parse(text);
+  const json = parse(text) as Scripts;
   return json.version;
 }
 
